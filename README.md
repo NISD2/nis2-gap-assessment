@@ -87,17 +87,24 @@ CI runs `bun run check:json-in-sync` and fails if the bundled JSON doesn't match
 
 ## Install
 
-```bash
-npm install @nisd2/nis2-gap-assessment
-# or
-bun add @nisd2/nis2-gap-assessment
-```
-
-Or pin to a specific commit / tag without npm:
+This package is **not published to the npm registry** — it is installed directly from GitHub. That keeps the source of truth and the consumed artefact identical, with no separate release pipeline to manage.
 
 ```bash
+# bun (recommended)
+bun add github:NISD2/nis2-gap-assessment#v1.2.0
+
+# npm
 npm install github:NISD2/nis2-gap-assessment#v1.2.0
+
+# pnpm / yarn — same syntax
 ```
+
+Pin to any tag, branch, or commit SHA. To upgrade, change the tag and reinstall.
+
+If you only need the JSON or the JSON Schema (no TypeScript), download them directly:
+
+- [`data/gap-assessment.json`](./data/gap-assessment.json) — the assessment data
+- [`schema/gap-assessment.schema.json`](./schema/gap-assessment.schema.json) — JSON Schema for validation
 
 ---
 
