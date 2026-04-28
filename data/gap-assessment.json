@@ -1,0 +1,2433 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-25",
+  "domains": [
+    {
+      "id": 0,
+      "code": "SCOPE",
+      "name": { "en": "Scoping & Registration", "de": "Anwendungsbereich & Registrierung" },
+      "description": { "en": "Before anything else: are you in scope, and have you registered?", "de": "Zuallererst: Sind Sie betroffen, und haben Sie sich registriert?" },
+      "day": 1
+    },
+    {
+      "id": 1,
+      "code": "GOV",
+      "name": { "en": "Governance & Management Liability", "de": "Governance & Geschäftsleitungshaftung" },
+      "description": { "en": "The CEO is personally liable. This domain tests whether management knows, understands, and has acted.", "de": "Die Geschäftsführung haftet persönlich. Dieser Bereich prüft, ob das Management informiert ist, die Pflichten versteht und gehandelt hat." },
+      "day": 1
+    },
+    {
+      "id": 2,
+      "code": "RISK",
+      "name": { "en": "Risk Management", "de": "Risikomanagement" },
+      "description": { "en": "Do you know what you have, what can go wrong, and what you're doing about it?", "de": "Wissen Sie, was Sie haben, was schiefgehen kann und was Sie dagegen tun?" },
+      "day": 2
+    },
+    {
+      "id": 3,
+      "code": "INC",
+      "name": { "en": "Incident Handling", "de": "Vorfallbehandlung" },
+      "description": { "en": "Can you detect, respond to, and report security incidents?", "de": "Können Sie Sicherheitsvorfälle erkennen, darauf reagieren und sie melden?" },
+      "day": 3
+    },
+    {
+      "id": 4,
+      "code": "BCP",
+      "name": { "en": "Business Continuity", "de": "Betriebskontinuität" },
+      "description": { "en": "If your systems go down, can you keep your business running?", "de": "Wenn Ihre Systeme ausfallen, können Sie den Geschäftsbetrieb aufrechterhalten?" },
+      "day": 3
+    },
+    {
+      "id": 5,
+      "code": "SUP",
+      "name": { "en": "Supply Chain Security", "de": "Lieferkettensicherheit" },
+      "description": { "en": "Are your suppliers secure, and can you prove your own security to your customers?", "de": "Sind Ihre Lieferanten sicher, und können Sie Ihre eigene Sicherheit gegenüber Ihren Kunden nachweisen?" },
+      "day": 4
+    },
+    {
+      "id": 6,
+      "code": "DEV",
+      "name": { "en": "Secure Development & Procurement", "de": "Sichere Entwicklung & Beschaffung" },
+      "description": { "en": "Are you buying and building systems securely?", "de": "Beschaffen und entwickeln Sie Systeme sicher?" },
+      "day": 5
+    },
+    {
+      "id": 7,
+      "code": "EFF",
+      "name": { "en": "Effectiveness Assessment", "de": "Wirksamkeitsbewertung" },
+      "description": { "en": "How do you know your security actually works?", "de": "Woher wissen Sie, dass Ihre Sicherheitsmaßnahmen tatsächlich funktionieren?" },
+      "day": 5
+    },
+    {
+      "id": 8,
+      "code": "TRN",
+      "name": { "en": "Cyber Hygiene & Training", "de": "Cyberhygiene & Schulungen" },
+      "description": { "en": "Do your employees know how to stay safe online?", "de": "Wissen Ihre Mitarbeiter, wie sie sich online sicher verhalten?" },
+      "day": 4
+    },
+    {
+      "id": 9,
+      "code": "CRY",
+      "name": { "en": "Cryptography", "de": "Kryptografie" },
+      "description": { "en": "Are you using encryption to protect data?", "de": "Nutzen Sie Verschlüsselung zum Schutz Ihrer Daten?" },
+      "day": 5
+    },
+    {
+      "id": 10,
+      "code": "ACC",
+      "name": { "en": "Access Control", "de": "Zugangskontrolle" },
+      "description": { "en": "Who has access to what, and is it controlled?", "de": "Wer hat Zugang wozu, und ist dieser kontrolliert?" },
+      "day": 4
+    },
+    {
+      "id": 11,
+      "code": "COM",
+      "name": { "en": "Secure Communications", "de": "Sichere Kommunikation" },
+      "description": { "en": "Can you communicate securely, especially during a crisis?", "de": "Können Sie sicher kommunizieren, insbesondere während einer Krise?" },
+      "day": 5
+    },
+    {
+      "id": 12,
+      "code": "NET",
+      "name": { "en": "Network Security", "de": "Netzwerksicherheit" },
+      "description": { "en": "Are your networks protected?", "de": "Sind Ihre Netzwerke geschützt?" },
+      "day": 5
+    },
+    {
+      "id": 13,
+      "code": "PHY",
+      "name": { "en": "Physical Security", "de": "Physische Sicherheit" },
+      "description": { "en": "Is your physical space secure?", "de": "Sind Ihre Räumlichkeiten physisch gesichert?" },
+      "day": 4
+    },
+    {
+      "id": 14,
+      "code": "EVD",
+      "name": { "en": "Evidence & Documentation", "de": "Nachweise & Dokumentation" },
+      "description": { "en": "Can you prove all of the above to an auditor?", "de": "Können Sie all das einem Prüfer nachweisen?" },
+      "day": 5
+    }
+  ],
+  "questions": [
+    {
+      "id": "gap-0-01",
+      "domain": 0,
+      "text": {
+        "en": "Have you determined whether your company is an \"essential\" or \"important\" entity under §28 BSIG?",
+        "de": "Haben Sie festgestellt, ob Ihr Unternehmen eine \"besonders wichtige\" oder \"wichtige\" Einrichtung gemäß §28 BSIG ist?"
+      },
+      "plainText": {
+        "en": "Do you know which NIS2 category your company falls into? Essential = stricter supervision, important = lighter supervision.",
+        "de": "Wissen Sie, in welche NIS2-Kategorie Ihr Unternehmen fällt? Besonders wichtig = strengere Aufsicht, wichtig = leichtere Aufsicht."
+      },
+      "legalBasis": "§28 BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-0-02",
+      "domain": 0,
+      "text": {
+        "en": "Have you assessed your sector classification against Annex I and Annex II of the NIS2 Directive?",
+        "de": "Haben Sie Ihre Sektorzuordnung anhand von Anhang I und Anhang II der NIS2-Richtlinie geprüft?"
+      },
+      "plainText": {
+        "en": "Is your company in one of the 18 regulated sectors? (energy, transport, health, water, waste, food, manufacturing, digital services, etc.)",
+        "de": "Gehört Ihr Unternehmen zu einem der 18 regulierten Sektoren? (Energie, Transport, Gesundheit, Wasser, Abfall, Lebensmittel, Fertigung, digitale Dienste usw.)"
+      },
+      "legalBasis": "Art 2, Annex I/II",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-0-03",
+      "domain": 0,
+      "text": {
+        "en": "Have you verified your employee count and revenue/balance sheet against the size thresholds?",
+        "de": "Haben Sie Ihre Mitarbeiterzahl und Ihren Umsatz/Bilanzsumme mit den Schwellenwerten abgeglichen?"
+      },
+      "plainText": {
+        "en": "Do you have 50+ employees, OR more than EUR 10M annual revenue AND more than EUR 10M balance sheet? If yes, you're likely in scope.",
+        "de": "Haben Sie 50+ Mitarbeiter, ODER mehr als 10 Mio. EUR Jahresumsatz UND mehr als 10 Mio. EUR Bilanzsumme? Falls ja, sind Sie wahrscheinlich betroffen."
+      },
+      "legalBasis": "§28 BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-0-04",
+      "domain": 0,
+      "text": {
+        "en": "If part of a group, have you consolidated employee counts and revenue of linked companies for threshold calculation?",
+        "de": "Haben Sie, falls Teil einer Unternehmensgruppe, die Mitarbeiterzahlen und Umsätze verbundener Unternehmen für die Schwellenwertberechnung konsolidiert?"
+      },
+      "plainText": {
+        "en": "If your company has a parent company or subsidiaries, their employees and revenue count toward your thresholds. Have you checked this?",
+        "de": "Wenn Ihr Unternehmen ein Mutterunternehmen oder Tochtergesellschaften hat, zählen deren Mitarbeiter und Umsätze zu Ihren Schwellenwerten. Haben Sie das geprüft?"
+      },
+      "legalBasis": "§28 BSIG",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-0-05",
+      "domain": 0,
+      "text": {
+        "en": "If you operate in multiple EU member states, have you determined which country's authority you must register with?",
+        "de": "Haben Sie, falls Sie in mehreren EU-Mitgliedstaaten tätig sind, festgelegt, bei welcher nationalen Behörde Sie sich registrieren müssen?"
+      },
+      "plainText": {
+        "en": "If you have offices or operations in other EU countries, do you know which country you register in?",
+        "de": "Wenn Sie Niederlassungen oder Geschäftstätigkeiten in anderen EU-Ländern haben, wissen Sie, in welchem Land Sie sich registrieren müssen?"
+      },
+      "legalBasis": "Art 26 NIS2",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-0-06",
+      "domain": 0,
+      "text": {
+        "en": "Have you registered with the BSI via the MUK portal (Mein Unternehmenskonto)?",
+        "de": "Haben Sie sich beim BSI über das MUK-Portal (Mein Unternehmenskonto) registriert?"
+      },
+      "plainText": {
+        "en": "Have you created an account on the BSI registration portal? This is a two-step process.",
+        "de": "Haben Sie ein Konto auf dem BSI-Registrierungsportal erstellt? Dies ist ein zweistufiger Prozess."
+      },
+      "legalBasis": "§33, §34 BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-0-07",
+      "domain": 0,
+      "text": {
+        "en": "Have you completed the second step of NIS2 registration at the BSI portal?",
+        "de": "Haben Sie den zweiten Schritt der NIS2-Registrierung beim BSI-Portal abgeschlossen?"
+      },
+      "plainText": {
+        "en": "After the MUK account, there's a separate NIS2 registration form. Have you completed it?",
+        "de": "Nach dem MUK-Konto gibt es ein separates NIS2-Registrierungsformular. Haben Sie es ausgefüllt?"
+      },
+      "legalBasis": "§33, §34 BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": ["gap-0-06"]
+    },
+    {
+      "id": "gap-0-08",
+      "domain": 0,
+      "text": {
+        "en": "Have you designated a contact person for BSI communications?",
+        "de": "Haben Sie eine Kontaktperson für die Kommunikation mit dem BSI benannt?"
+      },
+      "plainText": {
+        "en": "Does the BSI have a named person at your company they can reach?",
+        "de": "Hat das BSI eine namentlich benannte Ansprechperson in Ihrem Unternehmen?"
+      },
+      "legalBasis": "§33(2) BSIG",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": ["gap-0-06"]
+    },
+    {
+      "id": "gap-0-09",
+      "domain": 0,
+      "text": {
+        "en": "Are you aware of and tracking any country-specific registration deadlines if operating outside Germany?",
+        "de": "Kennen und verfolgen Sie länderspezifische Registrierungsfristen, falls Sie außerhalb Deutschlands tätig sind?"
+      },
+      "plainText": {
+        "en": "If you're also registered or need to register in other EU countries, are you tracking their deadlines?",
+        "de": "Wenn Sie sich auch in anderen EU-Ländern registrieren müssen, verfolgen Sie deren Fristen?"
+      },
+      "legalBasis": "Art 3(3) NIS2",
+      "criticality": 1,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-01",
+      "domain": 1,
+      "text": {
+        "en": "Has the management body formally approved the cybersecurity risk management measures?",
+        "de": "Hat die Geschäftsleitung die Maßnahmen zum Cybersicherheits-Risikomanagement formell genehmigt?"
+      },
+      "plainText": {
+        "en": "Has the CEO/GF personally said \"yes, these are our security measures\" and put their name on it? Not just delegated it to IT.",
+        "de": "Hat der CEO/GF persönlich gesagt \"Ja, das sind unsere Sicherheitsmaßnahmen\" und dies mit seinem Namen unterschrieben? Nicht einfach an die IT delegiert."
+      },
+      "legalBasis": "Art 20(1), §38(1) BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 3,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-02",
+      "domain": 1,
+      "text": {
+        "en": "Is this approval documented in writing (board resolution, signed minutes)?",
+        "de": "Ist diese Genehmigung schriftlich dokumentiert (Vorstandsbeschluss, unterschriebenes Protokoll)?"
+      },
+      "plainText": {
+        "en": "Is there a signed document proving the CEO approved the security measures?",
+        "de": "Gibt es ein unterschriebenes Dokument, das belegt, dass der CEO die Sicherheitsmaßnahmen genehmigt hat?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 3,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": ["gap-1-01"]
+    },
+    {
+      "id": "gap-1-03",
+      "domain": 1,
+      "text": {
+        "en": "Does the management body actively oversee the implementation of cybersecurity measures?",
+        "de": "Überwacht die Geschäftsleitung aktiv die Umsetzung der Cybersicherheitsmaßnahmen?"
+      },
+      "plainText": {
+        "en": "Does the CEO check in on security progress, not just sign something once and forget?",
+        "de": "Prüft der CEO regelmäßig den Fortschritt bei der Sicherheit, statt nur einmal etwas zu unterschreiben und es dann zu vergessen?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 3,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-04",
+      "domain": 1,
+      "text": {
+        "en": "Is cybersecurity a regular agenda item in management meetings (at least quarterly)?",
+        "de": "Ist Cybersicherheit ein regelmäßiger Tagesordnungspunkt in Geschäftsleitungssitzungen (mindestens vierteljährlich)?"
+      },
+      "plainText": {
+        "en": "Is security discussed in management meetings at least 4 times a year?",
+        "de": "Wird Sicherheit mindestens viermal im Jahr in Geschäftsleitungssitzungen besprochen?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-05",
+      "domain": 1,
+      "text": {
+        "en": "Are meeting minutes documenting cybersecurity discussions and decisions retained?",
+        "de": "Werden Sitzungsprotokolle, die Cybersicherheitsdiskussionen und -entscheidungen dokumentieren, aufbewahrt?"
+      },
+      "plainText": {
+        "en": "If an auditor asks \"show me your board discussed security,\" can you show written records?",
+        "de": "Wenn ein Prüfer fragt \"Zeigen Sie mir, dass Ihre Geschäftsleitung über Sicherheit gesprochen hat\" -- können Sie schriftliche Aufzeichnungen vorlegen?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": ["gap-1-04"]
+    },
+    {
+      "id": "gap-1-06",
+      "domain": 1,
+      "text": {
+        "en": "Has every member of the management body personally completed cybersecurity training?",
+        "de": "Hat jedes Mitglied der Geschäftsleitung persönlich eine Cybersicherheitsschulung absolviert?"
+      },
+      "plainText": {
+        "en": "Has the CEO (and every GF/Vorstand member) actually sat through a security training? Not their IT person -- them personally.",
+        "de": "Hat der CEO (und jedes GF-/Vorstandsmitglied) tatsächlich persönlich an einer Sicherheitsschulung teilgenommen? Nicht die IT-Abteilung -- sie selbst."
+      },
+      "legalBasis": "Art 20(2), §38(3) BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 3,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-07",
+      "domain": 1,
+      "text": {
+        "en": "Is this training documented with date, content covered, and duration?",
+        "de": "Ist diese Schulung mit Datum, behandelten Inhalten und Dauer dokumentiert?"
+      },
+      "plainText": {
+        "en": "Can you show an auditor when the CEO did the training, what it covered, and how long it took?",
+        "de": "Können Sie einem Prüfer zeigen, wann der CEO die Schulung absolviert hat, was behandelt wurde und wie lange sie dauerte?"
+      },
+      "legalBasis": "Art 20(2)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": ["gap-1-06"]
+    },
+    {
+      "id": "gap-1-08",
+      "domain": 1,
+      "text": {
+        "en": "Does the training cover risk identification, assessing security measures, and understanding impact on services?",
+        "de": "Deckt die Schulung Risikoerkennung, Bewertung von Sicherheitsmaßnahmen und das Verständnis der Auswirkungen auf Dienste ab?"
+      },
+      "plainText": {
+        "en": "Did the training cover the three things the law requires: how to spot risks, how to evaluate if your protections work, and what happens to your business if they fail?",
+        "de": "Hat die Schulung die drei gesetzlich geforderten Themen abgedeckt: Wie erkennt man Risiken, wie bewertet man, ob die Schutzmaßnahmen funktionieren, und was passiert mit dem Unternehmen, wenn sie versagen?"
+      },
+      "legalBasis": "Art 20(2)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": ["gap-1-06"]
+    },
+    {
+      "id": "gap-1-09",
+      "domain": 1,
+      "text": {
+        "en": "Is management training refreshed regularly (at least every 3 years, annually recommended)?",
+        "de": "Wird die Schulung der Geschäftsleitung regelmäßig aufgefrischt (mindestens alle 3 Jahre, jährlich empfohlen)?"
+      },
+      "plainText": {
+        "en": "Is this a one-time thing or does the CEO re-train periodically?",
+        "de": "Ist dies eine einmalige Sache oder wird die Schulung des CEO regelmäßig wiederholt?"
+      },
+      "legalBasis": "Art 20(2)",
+      "criticality": 1,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": ["gap-1-06"]
+    },
+    {
+      "id": "gap-1-10",
+      "domain": 1,
+      "text": {
+        "en": "Is the management body aware that §38 BSIG creates personal liability for NIS2 failures?",
+        "de": "Ist der Geschäftsleitung bewusst, dass §38 BSIG eine persönliche Haftung für NIS2-Verstöße begründet?"
+      },
+      "plainText": {
+        "en": "Does the CEO know they can be personally fined for security failures? Not the company -- them as a person.",
+        "de": "Weiß der CEO, dass er persönlich für Sicherheitsversäumnisse haftbar gemacht werden kann? Nicht das Unternehmen -- er als Person."
+      },
+      "legalBasis": "§38 BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 3,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-11",
+      "domain": 1,
+      "text": {
+        "en": "Is the management body aware that the company cannot waive claims against them for NIS2 violations?",
+        "de": "Ist der Geschäftsleitung bewusst, dass das Unternehmen nicht auf Ansprüche gegen sie wegen NIS2-Verstößen verzichten kann?"
+      },
+      "plainText": {
+        "en": "Does the CEO know that their employment contract can't protect them? The company is legally obligated to pursue claims against its own CEO if NIS2 is violated.",
+        "de": "Weiß der CEO, dass sein Arbeitsvertrag ihn nicht schützen kann? Das Unternehmen ist gesetzlich verpflichtet, Ansprüche gegen den eigenen CEO zu verfolgen, wenn NIS2 verletzt wird."
+      },
+      "legalBasis": "§38(2) BSIG",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 3,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-12",
+      "domain": 1,
+      "text": {
+        "en": "Has the management body reviewed their D&O insurance coverage for NIS2-related claims?",
+        "de": "Hat die Geschäftsleitung ihren D&O-Versicherungsschutz hinsichtlich NIS2-bezogener Ansprüche überprüft?"
+      },
+      "plainText": {
+        "en": "Has anyone checked if the CEO's insurance actually covers NIS2 fines? (Spoiler: fines are usually not insurable in Germany.)",
+        "de": "Hat jemand geprüft, ob die Versicherung des CEO tatsächlich NIS2-Bußgelder abdeckt? (Hinweis: Bußgelder sind in Deutschland in der Regel nicht versicherbar.)"
+      },
+      "legalBasis": "§38 BSIG",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-13",
+      "domain": 1,
+      "text": {
+        "en": "Has an appropriate cybersecurity budget been formally approved and documented with justification?",
+        "de": "Wurde ein angemessenes Cybersicherheitsbudget formell genehmigt und mit Begründung dokumentiert?"
+      },
+      "plainText": {
+        "en": "Is there a written budget for security, and can you explain why the amount is appropriate for your company's risk?",
+        "de": "Gibt es ein schriftliches Budget für Sicherheit, und können Sie begründen, warum der Betrag für das Risikoprofil Ihres Unternehmens angemessen ist?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-14",
+      "domain": 1,
+      "text": {
+        "en": "Is there a named person responsible for information security (ISB/CISO)?",
+        "de": "Gibt es eine namentlich benannte Person, die für die Informationssicherheit verantwortlich ist (ISB/CISO)?"
+      },
+      "plainText": {
+        "en": "Is there one specific person whose job it is to manage security? (Can be part-time, can be external.)",
+        "de": "Gibt es eine bestimmte Person, deren Aufgabe es ist, die Sicherheit zu managen? (Kann in Teilzeit sein, kann extern sein.)"
+      },
+      "legalBasis": "Art 20",
+      "criticality": 3,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-15",
+      "domain": 1,
+      "text": {
+        "en": "Are cybersecurity roles and responsibilities documented and communicated across the organization?",
+        "de": "Sind die Rollen und Verantwortlichkeiten im Bereich Cybersicherheit dokumentiert und in der gesamten Organisation kommuniziert?"
+      },
+      "plainText": {
+        "en": "Does everyone know who is responsible for what when it comes to security?",
+        "de": "Weiß jeder, wer wofür verantwortlich ist, wenn es um Sicherheit geht?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 1,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-1-16",
+      "domain": 1,
+      "text": {
+        "en": "Does the ISB/CISO have direct access to management for security matters?",
+        "de": "Hat der ISB/CISO direkten Zugang zur Geschäftsleitung bei Sicherheitsfragen?"
+      },
+      "plainText": {
+        "en": "Can the security person go directly to the CEO with a problem, without going through layers of management?",
+        "de": "Kann die für Sicherheit verantwortliche Person bei einem Problem direkt zum CEO gehen, ohne mehrere Führungsebenen durchlaufen zu müssen?"
+      },
+      "legalBasis": "BSI Grundschutz",
+      "criticality": 1,
+      "respondent": 0,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": ["gap-1-14"]
+    },
+    {
+      "id": "gap-1-17",
+      "domain": 1,
+      "text": {
+        "en": "Is the ISB/CISO appointment formally documented in writing with defined scope of authority?",
+        "de": "Ist die Ernennung des ISB/CISO formell schriftlich mit definiertem Verantwortungsbereich dokumentiert?"
+      },
+      "plainText": {
+        "en": "Is there a signed appointment letter that says who the security person is, what they're responsible for, and what authority they have?",
+        "de": "Gibt es ein unterschriebenes Ernennungsschreiben, das festlegt, wer die für Sicherheit zuständige Person ist, wofür sie verantwortlich ist und welche Befugnisse sie hat?"
+      },
+      "legalBasis": "BSI Grundschutz",
+      "criticality": 1,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 0,
+      "day": 1,
+      "dependsOn": ["gap-1-14"]
+    },
+    {
+      "id": "gap-2-01",
+      "domain": 2,
+      "text": {
+        "en": "Does your organization have a documented risk assessment methodology?",
+        "de": "Verfügt Ihre Organisation über eine dokumentierte Risikobewertungsmethodik?"
+      },
+      "plainText": {
+        "en": "Is there a written process for how you identify and evaluate security risks? (Even a simple spreadsheet process counts.)",
+        "de": "Gibt es einen schriftlich festgelegten Prozess, wie Sie Sicherheitsrisiken identifizieren und bewerten? (Auch ein einfacher Tabellenkalkulationsprozess zählt.)"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-2-02",
+      "domain": 2,
+      "text": {
+        "en": "Does the methodology cover likelihood and impact assessment?",
+        "de": "Deckt die Methodik die Bewertung von Eintrittswahrscheinlichkeit und Auswirkung ab?"
+      },
+      "plainText": {
+        "en": "When you find a risk, do you assess both \"how likely is this?\" and \"how bad would it be?\"",
+        "de": "Wenn Sie ein Risiko finden, bewerten Sie dann sowohl \"Wie wahrscheinlich ist das?\" als auch \"Wie schlimm wäre es?\""
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-01"]
+    },
+    {
+      "id": "gap-2-03",
+      "domain": 2,
+      "text": {
+        "en": "Does the methodology consider more than just cyber attacks?",
+        "de": "Berücksichtigt die Methodik mehr als nur Cyberangriffe?"
+      },
+      "plainText": {
+        "en": "Do you also consider power outages, floods, employee mistakes, supplier failures -- not just hackers?",
+        "de": "Berücksichtigen Sie auch Stromausfälle, Überschwemmungen, Mitarbeiterfehler, Lieferantenausfälle -- nicht nur Hacker?"
+      },
+      "legalBasis": "Art 21(1)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-01"]
+    },
+    {
+      "id": "gap-2-04",
+      "domain": 2,
+      "text": {
+        "en": "Is the methodology proportionate to your organization's size and risk exposure?",
+        "de": "Ist die Methodik verhältnismäßig zur Größe und Risikoexposition Ihrer Organisation?"
+      },
+      "plainText": {
+        "en": "Is your approach right-sized for your company? A 50-person company doesn't need the same process as a bank.",
+        "de": "Ist Ihr Ansatz auf Ihr Unternehmen zugeschnitten? Ein 50-Personen-Unternehmen braucht nicht denselben Prozess wie eine Bank."
+      },
+      "legalBasis": "Art 21(1)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-01"]
+    },
+    {
+      "id": "gap-2-05",
+      "domain": 2,
+      "text": {
+        "en": "Do you maintain a list of all your IT systems, software, and equipment?",
+        "de": "Führen Sie eine Liste aller Ihrer IT-Systeme, Software und Geräte?"
+      },
+      "plainText": {
+        "en": "Do you know every server, laptop, application, and piece of network equipment your company uses? Written down somewhere?",
+        "de": "Kennen Sie jeden Server, Laptop, jede Anwendung und jedes Netzwerkgerät, das Ihr Unternehmen nutzt? Irgendwo aufgeschrieben?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 2,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-2-06",
+      "domain": 2,
+      "text": {
+        "en": "Are assets classified by how critical they are to your business?",
+        "de": "Sind die Assets nach ihrer Kritikalität für Ihr Unternehmen klassifiziert?"
+      },
+      "plainText": {
+        "en": "Do you know which systems would hurt most if they went down?",
+        "de": "Wissen Sie, welche Systeme den größten Schaden verursachen würden, wenn sie ausfallen?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-05"]
+    },
+    {
+      "id": "gap-2-07",
+      "domain": 2,
+      "text": {
+        "en": "Does the inventory distinguish between office IT and operational technology (OT)?",
+        "de": "Unterscheidet das Inventar zwischen Büro-IT und Betriebstechnologie (OT)?"
+      },
+      "plainText": {
+        "en": "If you have industrial equipment, production lines, or building management systems, are they listed separately from office computers?",
+        "de": "Wenn Sie Industrieanlagen, Produktionslinien oder Gebäudemanagementsysteme haben, sind diese getrennt von Bürocomputern aufgelistet?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-05"]
+    },
+    {
+      "id": "gap-2-08",
+      "domain": 2,
+      "text": {
+        "en": "Is the asset inventory reviewed and updated at least annually?",
+        "de": "Wird das Asset-Inventar mindestens jährlich überprüft und aktualisiert?"
+      },
+      "plainText": {
+        "en": "When was the list last updated?",
+        "de": "Wann wurde die Liste zuletzt aktualisiert?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-05"]
+    },
+    {
+      "id": "gap-2-09",
+      "domain": 2,
+      "text": {
+        "en": "Have you conducted a cybersecurity risk assessment within the past 12 months?",
+        "de": "Haben Sie in den letzten 12 Monaten eine Cybersicherheits-Risikobewertung durchgeführt?"
+      },
+      "plainText": {
+        "en": "Have you actually sat down and identified what could go wrong, in the last year?",
+        "de": "Haben Sie sich im letzten Jahr tatsächlich hingesetzt und ermittelt, was schiefgehen könnte?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 2,
+      "dependsOn": ["gap-2-01", "gap-2-05"]
+    },
+    {
+      "id": "gap-2-10",
+      "domain": 2,
+      "text": {
+        "en": "Does the risk assessment cover all assets in the inventory?",
+        "de": "Deckt die Risikobewertung alle Assets im Inventar ab?"
+      },
+      "plainText": {
+        "en": "Did you assess risks for everything on your asset list, not just the obvious ones?",
+        "de": "Haben Sie Risiken für alles auf Ihrer Asset-Liste bewertet, nicht nur für die offensichtlichen?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 2,
+      "dependsOn": ["gap-2-09", "gap-2-05"]
+    },
+    {
+      "id": "gap-2-11",
+      "domain": 2,
+      "text": {
+        "en": "Are identified risks documented with an owner, likelihood, impact, and treatment plan?",
+        "de": "Sind identifizierte Risiken mit einem Verantwortlichen, Eintrittswahrscheinlichkeit, Auswirkung und Behandlungsplan dokumentiert?"
+      },
+      "plainText": {
+        "en": "For each risk you found, is it written down who's responsible, how likely it is, how bad it would be, and what you're doing about it?",
+        "de": "Ist für jedes gefundene Risiko festgehalten, wer verantwortlich ist, wie wahrscheinlich es ist, wie schlimm es wäre und was Sie dagegen tun?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 2,
+      "dependsOn": ["gap-2-09"]
+    },
+    {
+      "id": "gap-2-12",
+      "domain": 2,
+      "text": {
+        "en": "Are risk acceptance decisions formally approved by management in writing?",
+        "de": "Werden Risikoakzeptanzentscheidungen von der Geschäftsleitung formell schriftlich genehmigt?"
+      },
+      "plainText": {
+        "en": "If you decided to accept a risk (do nothing about it), did the CEO sign off on that decision?",
+        "de": "Wenn Sie sich entschieden haben, ein Risiko zu akzeptieren (nichts dagegen zu tun), hat der CEO diese Entscheidung schriftlich genehmigt?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 3,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 2,
+      "dependsOn": ["gap-2-09"]
+    },
+    {
+      "id": "gap-2-13",
+      "domain": 2,
+      "text": {
+        "en": "Is the risk assessment reviewed after significant changes or after security incidents?",
+        "de": "Wird die Risikobewertung nach wesentlichen Änderungen oder nach Sicherheitsvorfällen überprüft?"
+      },
+      "plainText": {
+        "en": "When something big changes (new system, new office, security incident), do you re-assess?",
+        "de": "Wenn sich etwas Wesentliches ändert (neues System, neues Büro, Sicherheitsvorfall), führen Sie dann eine Neubewertung durch?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-09"]
+    },
+    {
+      "id": "gap-2-14",
+      "domain": 2,
+      "text": {
+        "en": "Does your organization have a formal information security policy signed by management?",
+        "de": "Verfügt Ihre Organisation über eine formelle Informationssicherheitsrichtlinie, die von der Geschäftsleitung unterzeichnet ist?"
+      },
+      "plainText": {
+        "en": "Is there a written document that says \"this is how we do security,\" signed by the CEO?",
+        "de": "Gibt es ein schriftliches Dokument, das besagt \"So handhaben wir Sicherheit\", unterzeichnet vom CEO?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-2-15",
+      "domain": 2,
+      "text": {
+        "en": "Does the policy cover all 10 NIS2 security measures?",
+        "de": "Deckt die Richtlinie alle 10 NIS2-Sicherheitsmaßnahmen ab?"
+      },
+      "plainText": {
+        "en": "Does your security policy address: risk management, incidents, business continuity, supply chain, secure systems, effectiveness testing, training, cryptography, access control, and secure communications?",
+        "de": "Behandelt Ihre Sicherheitsrichtlinie: Risikomanagement, Vorfälle, Betriebskontinuität, Lieferkette, sichere Systeme, Wirksamkeitsprüfung, Schulungen, Kryptografie, Zugangskontrolle und sichere Kommunikation?"
+      },
+      "legalBasis": "Art 21(2)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 2,
+      "dependsOn": ["gap-2-14"]
+    },
+    {
+      "id": "gap-2-16",
+      "domain": 2,
+      "text": {
+        "en": "Is the policy reviewed and updated at least annually?",
+        "de": "Wird die Richtlinie mindestens jährlich überprüft und aktualisiert?"
+      },
+      "plainText": {
+        "en": "When was it last reviewed?",
+        "de": "Wann wurde sie zuletzt überprüft?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 2,
+      "dependsOn": ["gap-2-14"]
+    },
+    {
+      "id": "gap-2-17",
+      "domain": 2,
+      "text": {
+        "en": "Is the policy communicated to all employees?",
+        "de": "Ist die Richtlinie allen Mitarbeitern bekannt gemacht?"
+      },
+      "plainText": {
+        "en": "Does every employee know the policy exists and where to find it?",
+        "de": "Weiß jeder Mitarbeiter, dass die Richtlinie existiert und wo sie zu finden ist?"
+      },
+      "legalBasis": "Art 21(2)(a)",
+      "criticality": 1,
+      "respondent": 2,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 0,
+      "day": 2,
+      "dependsOn": ["gap-2-14"]
+    },
+    {
+      "id": "gap-3-01",
+      "domain": 3,
+      "text": {
+        "en": "Does your organization have a documented incident response plan?",
+        "de": "Verfügt Ihre Organisation über einen dokumentierten Vorfallreaktionsplan?"
+      },
+      "plainText": {
+        "en": "If you get hacked tomorrow, is there a written plan for what to do?",
+        "de": "Wenn Sie morgen gehackt werden, gibt es einen schriftlichen Plan, was zu tun ist?"
+      },
+      "legalBasis": "Art 21(2)(b)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-3-02",
+      "domain": 3,
+      "text": {
+        "en": "Does the plan define what counts as a \"significant incident\" that requires reporting?",
+        "de": "Definiert der Plan, was als \"erheblicher Sicherheitsvorfall\" gilt, der gemeldet werden muss?"
+      },
+      "plainText": {
+        "en": "Do you know which incidents you MUST report to the BSI and which you don't?",
+        "de": "Wissen Sie, welche Vorfälle Sie dem BSI melden MÜSSEN und welche nicht?"
+      },
+      "legalBasis": "Art 23(3)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 3,
+      "dependsOn": ["gap-3-01"]
+    },
+    {
+      "id": "gap-3-03",
+      "domain": 3,
+      "text": {
+        "en": "Does the plan include defined roles and responsibilities for incident response?",
+        "de": "Enthält der Plan definierte Rollen und Verantwortlichkeiten für die Vorfallreaktion?"
+      },
+      "plainText": {
+        "en": "Does everyone know who does what during an incident? Who calls the BSI, who fixes the systems, who talks to customers?",
+        "de": "Weiß jeder, wer was während eines Vorfalls tut? Wer ruft das BSI an, wer repariert die Systeme, wer kommuniziert mit Kunden?"
+      },
+      "legalBasis": "Art 21(2)(b)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 3,
+      "dependsOn": ["gap-3-01"]
+    },
+    {
+      "id": "gap-3-04",
+      "domain": 3,
+      "text": {
+        "en": "Has the incident response plan been tested within the past 12 months?",
+        "de": "Wurde der Vorfallreaktionsplan in den letzten 12 Monaten getestet?"
+      },
+      "plainText": {
+        "en": "Have you practiced? A tabletop exercise, a simulation, anything?",
+        "de": "Haben Sie geübt? Eine Planübung, eine Simulation, irgendetwas?"
+      },
+      "legalBasis": "Art 21(2)(b)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": ["gap-3-01"]
+    },
+    {
+      "id": "gap-3-05",
+      "domain": 3,
+      "text": {
+        "en": "Can your organization submit an early warning to BSI within 24 hours of becoming aware of a significant incident?",
+        "de": "Kann Ihre Organisation innerhalb von 24 Stunden nach Kenntnisnahme eines erheblichen Vorfalls eine Frühwarnung an das BSI übermitteln?"
+      },
+      "plainText": {
+        "en": "If something happens at 3am on a Saturday, can you notify the BSI within 24 hours?",
+        "de": "Wenn samstags um 3 Uhr morgens etwas passiert, können Sie das BSI innerhalb von 24 Stunden benachrichtigen?"
+      },
+      "legalBasis": "Art 23(4)(a), §32 BSIG",
+      "criticality": 3,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 3,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-3-06",
+      "domain": 3,
+      "text": {
+        "en": "Can your organization submit a detailed incident notification within 72 hours?",
+        "de": "Kann Ihre Organisation innerhalb von 72 Stunden eine detaillierte Vorfallmeldung einreichen?"
+      },
+      "plainText": {
+        "en": "Within 3 days, can you tell the BSI what happened, how bad it is, and what indicators of compromise you found?",
+        "de": "Können Sie dem BSI innerhalb von 3 Tagen mitteilen, was passiert ist, wie schlimm es ist und welche Kompromittierungsindikatoren Sie gefunden haben?"
+      },
+      "legalBasis": "Art 23(4)(b)",
+      "criticality": 3,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": ["gap-3-05"]
+    },
+    {
+      "id": "gap-3-07",
+      "domain": 3,
+      "text": {
+        "en": "Can your organization submit a final report within one month?",
+        "de": "Kann Ihre Organisation innerhalb eines Monats einen Abschlussbericht einreichen?"
+      },
+      "plainText": {
+        "en": "Within 30 days, can you provide a complete root cause analysis and what you did to fix it?",
+        "de": "Können Sie innerhalb von 30 Tagen eine vollständige Ursachenanalyse und die ergriffenen Gegenmaßnahmen vorlegen?"
+      },
+      "legalBasis": "Art 23(4)(d)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": ["gap-3-06"]
+    },
+    {
+      "id": "gap-3-08",
+      "domain": 3,
+      "text": {
+        "en": "Do you know the BSI reporting portal and have access credentials ready?",
+        "de": "Kennen Sie das BSI-Meldeportal und haben Sie Zugangsdaten bereit?"
+      },
+      "plainText": {
+        "en": "Have you actually logged into the BSI reporting system, or would you be Googling it during a crisis?",
+        "de": "Haben Sie sich tatsächlich im BSI-Meldesystem angemeldet, oder würden Sie es während einer Krise erst googeln?"
+      },
+      "legalBasis": "§32 BSIG",
+      "criticality": 3,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 0,
+      "day": 3,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-3-09",
+      "domain": 3,
+      "text": {
+        "en": "Is there a 24/7 contact point for incident detection and initial triage?",
+        "de": "Gibt es eine 24/7-Kontaktstelle für Vorfallerkennung und erste Einschätzung?"
+      },
+      "plainText": {
+        "en": "If an attack happens outside office hours, who gets the call?",
+        "de": "Wenn ein Angriff außerhalb der Geschäftszeiten stattfindet, wer wird benachrichtigt?"
+      },
+      "legalBasis": "Art 21(2)(b)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-3-10",
+      "domain": 3,
+      "text": {
+        "en": "Do you have logging and monitoring in place for critical systems?",
+        "de": "Haben Sie Protokollierung und Überwachung für kritische Systeme eingerichtet?"
+      },
+      "plainText": {
+        "en": "Are your important systems keeping records of what happens on them?",
+        "de": "Zeichnen Ihre wichtigen Systeme auf, was auf ihnen passiert?"
+      },
+      "legalBasis": "Art 21(2)(b)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-3-11",
+      "domain": 3,
+      "text": {
+        "en": "Are logs retained for a sufficient period to support incident investigation?",
+        "de": "Werden Protokolle für einen ausreichenden Zeitraum aufbewahrt, um Vorfalluntersuchungen zu unterstützen?"
+      },
+      "plainText": {
+        "en": "If something happened 3 months ago and you only find out now, can you still check the logs?",
+        "de": "Wenn vor 3 Monaten etwas passiert ist und Sie es erst jetzt erfahren, können Sie dann noch die Protokolle prüfen?"
+      },
+      "legalBasis": "Art 21(2)(b)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 3,
+      "dependsOn": ["gap-3-10"]
+    },
+    {
+      "id": "gap-3-12",
+      "domain": 3,
+      "text": {
+        "en": "Is there a process to review logs and detect anomalies?",
+        "de": "Gibt es einen Prozess zur Überprüfung von Protokollen und Erkennung von Anomalien?"
+      },
+      "plainText": {
+        "en": "Does anyone actually look at the logs, or are they just piling up?",
+        "de": "Schaut sich jemand die Protokolle tatsächlich an, oder häufen sie sich nur an?"
+      },
+      "legalBasis": "Art 21(2)(b)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": ["gap-3-10"]
+    },
+    {
+      "id": "gap-4-01",
+      "domain": 4,
+      "text": {
+        "en": "Does your organization have a documented business continuity plan?",
+        "de": "Verfügt Ihre Organisation über einen dokumentierten Betriebskontinuitätsplan?"
+      },
+      "plainText": {
+        "en": "If all your IT goes down tomorrow, is there a written plan for how to keep operating?",
+        "de": "Wenn Ihre gesamte IT morgen ausfällt, gibt es einen schriftlichen Plan, wie der Betrieb weitergeführt wird?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-4-02",
+      "domain": 4,
+      "text": {
+        "en": "Does the plan identify critical business processes and their dependencies on IT?",
+        "de": "Identifiziert der Plan kritische Geschäftsprozesse und deren Abhängigkeiten von der IT?"
+      },
+      "plainText": {
+        "en": "Do you know which business processes absolutely cannot stop, and which IT systems they depend on?",
+        "de": "Wissen Sie, welche Geschäftsprozesse auf keinen Fall stoppen dürfen und von welchen IT-Systemen sie abhängen?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 3,
+      "dependsOn": ["gap-4-01"]
+    },
+    {
+      "id": "gap-4-03",
+      "domain": 4,
+      "text": {
+        "en": "Does the plan define how quickly systems need to be restored and how much data loss is acceptable?",
+        "de": "Definiert der Plan, wie schnell Systeme wiederhergestellt werden müssen und wie viel Datenverlust akzeptabel ist?"
+      },
+      "plainText": {
+        "en": "Have you decided: \"we need email back within 4 hours\" or \"we can't lose more than 1 day of data\"?",
+        "de": "Haben Sie festgelegt: \"Wir brauchen E-Mail innerhalb von 4 Stunden zurück\" oder \"Wir dürfen nicht mehr als 1 Tag an Daten verlieren\"?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 3,
+      "dependsOn": ["gap-4-01"]
+    },
+    {
+      "id": "gap-4-04",
+      "domain": 4,
+      "text": {
+        "en": "Has the business continuity plan been tested within the past 12 months?",
+        "de": "Wurde der Betriebskontinuitätsplan in den letzten 12 Monaten getestet?"
+      },
+      "plainText": {
+        "en": "Have you practiced recovering from a disaster?",
+        "de": "Haben Sie die Wiederherstellung nach einem Notfall geübt?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": ["gap-4-01"]
+    },
+    {
+      "id": "gap-4-05",
+      "domain": 4,
+      "text": {
+        "en": "Are regular backups performed for all critical systems and data?",
+        "de": "Werden regelmäßige Backups für alle kritischen Systeme und Daten durchgeführt?"
+      },
+      "plainText": {
+        "en": "Are your important files and systems being backed up automatically?",
+        "de": "Werden Ihre wichtigen Dateien und Systeme automatisch gesichert?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-4-06",
+      "domain": 4,
+      "text": {
+        "en": "Are backups stored separately from production systems?",
+        "de": "Werden Backups getrennt von Produktivsystemen gespeichert?"
+      },
+      "plainText": {
+        "en": "If ransomware encrypts your servers, are your backups safe? (Different location, offline, or cloud?)",
+        "de": "Wenn Ransomware Ihre Server verschlüsselt, sind Ihre Backups sicher? (Anderer Standort, offline oder Cloud?)"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 3,
+      "dependsOn": ["gap-4-05"]
+    },
+    {
+      "id": "gap-4-07",
+      "domain": 4,
+      "text": {
+        "en": "Are backup restoration procedures tested regularly?",
+        "de": "Werden Backup-Wiederherstellungsverfahren regelmäßig getestet?"
+      },
+      "plainText": {
+        "en": "Have you actually tried restoring from a backup to make sure it works?",
+        "de": "Haben Sie tatsächlich versucht, aus einem Backup wiederherzustellen, um sicherzustellen, dass es funktioniert?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 3,
+      "dependsOn": ["gap-4-05"]
+    },
+    {
+      "id": "gap-5-01",
+      "domain": 5,
+      "text": {
+        "en": "Do you maintain a list of your critical suppliers and service providers?",
+        "de": "Führen Sie eine Liste Ihrer kritischen Lieferanten und Dienstleister?"
+      },
+      "plainText": {
+        "en": "Do you know who your most important IT suppliers are? (Cloud provider, email host, software vendors, IT support company?)",
+        "de": "Wissen Sie, wer Ihre wichtigsten IT-Lieferanten sind? (Cloud-Anbieter, E-Mail-Hoster, Softwareanbieter, IT-Dienstleister?)"
+      },
+      "legalBasis": "Art 21(2)(d)",
+      "criticality": 2,
+      "respondent": 3,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-5-02",
+      "domain": 5,
+      "text": {
+        "en": "Have you assessed the cybersecurity practices of your critical suppliers?",
+        "de": "Haben Sie die Cybersicherheitspraktiken Ihrer kritischen Lieferanten bewertet?"
+      },
+      "plainText": {
+        "en": "Have you asked your key suppliers about their security? Or checked if they have certifications?",
+        "de": "Haben Sie Ihre wichtigsten Lieferanten nach deren Sicherheit gefragt? Oder geprüft, ob sie Zertifizierungen haben?"
+      },
+      "legalBasis": "Art 21(2)(d)",
+      "criticality": 2,
+      "respondent": 3,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": ["gap-5-01"]
+    },
+    {
+      "id": "gap-5-03",
+      "domain": 5,
+      "text": {
+        "en": "Do your contracts with suppliers include cybersecurity requirements?",
+        "de": "Enthalten Ihre Verträge mit Lieferanten Cybersicherheitsanforderungen?"
+      },
+      "plainText": {
+        "en": "Do your supplier contracts say anything about security obligations, data protection, or incident notification?",
+        "de": "Enthalten Ihre Lieferantenverträge Regelungen zu Sicherheitspflichten, Datenschutz oder Vorfallmeldung?"
+      },
+      "legalBasis": "Art 21(2)(d)",
+      "criticality": 2,
+      "respondent": 3,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": ["gap-5-01"]
+    },
+    {
+      "id": "gap-5-04",
+      "domain": 5,
+      "text": {
+        "en": "Do you monitor supplier compliance with these requirements?",
+        "de": "Überwachen Sie die Einhaltung dieser Anforderungen durch Ihre Lieferanten?"
+      },
+      "plainText": {
+        "en": "Do you check whether suppliers actually follow the security rules in the contract?",
+        "de": "Prüfen Sie, ob Lieferanten die Sicherheitsregeln im Vertrag tatsächlich einhalten?"
+      },
+      "legalBasis": "Art 21(2)(d)",
+      "criticality": 1,
+      "respondent": 3,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 3,
+      "day": 4,
+      "dependsOn": ["gap-5-03"]
+    },
+    {
+      "id": "gap-5-05",
+      "domain": 5,
+      "text": {
+        "en": "Do you have a process for managing supplier security incidents?",
+        "de": "Haben Sie einen Prozess für den Umgang mit Sicherheitsvorfällen bei Lieferanten?"
+      },
+      "plainText": {
+        "en": "If your cloud provider gets hacked, do you know what to do?",
+        "de": "Wenn Ihr Cloud-Anbieter gehackt wird, wissen Sie, was zu tun ist?"
+      },
+      "legalBasis": "Art 21(2)(d)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": ["gap-5-01"]
+    },
+    {
+      "id": "gap-5-06",
+      "domain": 5,
+      "text": {
+        "en": "If your customers are NIS2-regulated, can you respond to their security questionnaires?",
+        "de": "Können Sie, falls Ihre Kunden NIS2-reguliert sind, deren Sicherheitsfragebögen beantworten?"
+      },
+      "plainText": {
+        "en": "If a big customer sends you a \"prove your security\" form, can you fill it in?",
+        "de": "Wenn ein großer Kunde Ihnen ein Formular \"Weisen Sie Ihre Sicherheit nach\" schickt, können Sie es ausfüllen?"
+      },
+      "legalBasis": "Art 21(2)(d)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-5-07",
+      "domain": 5,
+      "text": {
+        "en": "Can you provide evidence of your security measures to customers on request?",
+        "de": "Können Sie Ihren Kunden auf Anfrage Nachweise über Ihre Sicherheitsmaßnahmen vorlegen?"
+      },
+      "plainText": {
+        "en": "If a customer asks \"show me your security policies,\" can you produce documents?",
+        "de": "Wenn ein Kunde sagt \"Zeigen Sie mir Ihre Sicherheitsrichtlinien\", können Sie Dokumente vorlegen?"
+      },
+      "legalBasis": "Art 21(2)(d)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-01",
+      "domain": 6,
+      "text": {
+        "en": "Do you have a policy for secure acquisition of IT systems and services?",
+        "de": "Haben Sie eine Richtlinie für die sichere Beschaffung von IT-Systemen und -Diensten?"
+      },
+      "plainText": {
+        "en": "When you buy new software or hardware, do you check if it's secure? Or do you just pick the cheapest option?",
+        "de": "Wenn Sie neue Software oder Hardware kaufen, prüfen Sie, ob sie sicher ist? Oder wählen Sie einfach die günstigste Option?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-02",
+      "domain": 6,
+      "text": {
+        "en": "If you develop software, do you follow secure development practices?",
+        "de": "Wenn Sie Software entwickeln, befolgen Sie sichere Entwicklungspraktiken?"
+      },
+      "plainText": {
+        "en": "If your company builds software (even internal tools), is security part of the development process?",
+        "de": "Wenn Ihr Unternehmen Software entwickelt (auch interne Tools), ist Sicherheit Teil des Entwicklungsprozesses?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-03",
+      "domain": 6,
+      "text": {
+        "en": "Do you have a vulnerability management and patch management process?",
+        "de": "Haben Sie einen Prozess für Schwachstellen- und Patch-Management?"
+      },
+      "plainText": {
+        "en": "When security updates come out for your software, do you apply them? Is there a process for it?",
+        "de": "Wenn Sicherheitsupdates für Ihre Software erscheinen, installieren Sie diese? Gibt es dafür einen Prozess?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-04",
+      "domain": 6,
+      "text": {
+        "en": "Are critical security patches applied within a defined timeframe?",
+        "de": "Werden kritische Sicherheitspatches innerhalb eines definierten Zeitrahmens eingespielt?"
+      },
+      "plainText": {
+        "en": "How quickly do you install urgent security updates? Days? Weeks? Never?",
+        "de": "Wie schnell installieren Sie dringende Sicherheitsupdates? Tage? Wochen? Nie?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": ["gap-6-03"]
+    },
+    {
+      "id": "gap-6-05",
+      "domain": 6,
+      "text": {
+        "en": "Do you perform security testing before deploying new systems or changes?",
+        "de": "Führen Sie Sicherheitstests durch, bevor Sie neue Systeme oder Änderungen in Betrieb nehmen?"
+      },
+      "plainText": {
+        "en": "Before putting a new system live, do you check if it's secure?",
+        "de": "Bevor Sie ein neues System in Betrieb nehmen, prüfen Sie, ob es sicher ist?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-01",
+      "domain": 7,
+      "text": {
+        "en": "Do you have any way to measure whether your security measures are working?",
+        "de": "Haben Sie eine Möglichkeit zu messen, ob Ihre Sicherheitsmaßnahmen funktionieren?"
+      },
+      "plainText": {
+        "en": "Can you answer the question: \"are we more secure this year than last year?\" with evidence?",
+        "de": "Können Sie die Frage beantworten: \"Sind wir dieses Jahr sicherer als letztes Jahr?\" -- mit Belegen?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-02",
+      "domain": 7,
+      "text": {
+        "en": "Do you conduct regular internal reviews of your security measures?",
+        "de": "Führen Sie regelmäßige interne Überprüfungen Ihrer Sicherheitsmaßnahmen durch?"
+      },
+      "plainText": {
+        "en": "Does someone periodically check if the security rules are actually being followed?",
+        "de": "Prüft jemand regelmäßig, ob die Sicherheitsregeln tatsächlich eingehalten werden?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-03",
+      "domain": 7,
+      "text": {
+        "en": "Are the results of effectiveness assessments reported to management?",
+        "de": "Werden die Ergebnisse von Wirksamkeitsbewertungen der Geschäftsleitung berichtet?"
+      },
+      "plainText": {
+        "en": "Does the CEO see the results of security reviews?",
+        "de": "Sieht der CEO die Ergebnisse der Sicherheitsüberprüfungen?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": ["gap-7-01"]
+    },
+    {
+      "id": "gap-7-04",
+      "domain": 7,
+      "text": {
+        "en": "Do you have a corrective action process for identified deficiencies?",
+        "de": "Haben Sie einen Korrekturmaßnahmenprozess für festgestellte Mängel?"
+      },
+      "plainText": {
+        "en": "When you find a security problem, is there a process to track it until it's fixed?",
+        "de": "Wenn Sie ein Sicherheitsproblem finden, gibt es einen Prozess, um es bis zur Behebung zu verfolgen?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-05",
+      "domain": 7,
+      "text": {
+        "en": "Have you considered external penetration testing or vulnerability assessments?",
+        "de": "Haben Sie externe Penetrationstests oder Schwachstellenbewertungen in Betracht gezogen?"
+      },
+      "plainText": {
+        "en": "Has anyone tried to break into your systems on purpose to see if they could?",
+        "de": "Hat jemand absichtlich versucht, in Ihre Systeme einzudringen, um zu sehen, ob es möglich ist?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-8-01",
+      "domain": 8,
+      "text": {
+        "en": "Do all employees receive cybersecurity awareness training at least annually?",
+        "de": "Erhalten alle Mitarbeiter mindestens jährlich eine Cybersicherheits-Sensibilisierungsschulung?"
+      },
+      "plainText": {
+        "en": "Has every employee been taught about security threats in the last 12 months?",
+        "de": "Wurde jeder Mitarbeiter in den letzten 12 Monaten über Sicherheitsbedrohungen geschult?"
+      },
+      "legalBasis": "Art 21(2)(g)",
+      "criticality": 2,
+      "respondent": 2,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-8-02",
+      "domain": 8,
+      "text": {
+        "en": "Does training cover phishing, social engineering, and password hygiene?",
+        "de": "Deckt die Schulung Phishing, Social Engineering und Passworthygiene ab?"
+      },
+      "plainText": {
+        "en": "Do employees know how to spot fake emails, suspicious phone calls, and how to create good passwords?",
+        "de": "Wissen die Mitarbeiter, wie man gefälschte E-Mails, verdächtige Anrufe erkennt und wie man sichere Passwörter erstellt?"
+      },
+      "legalBasis": "Art 21(2)(g)",
+      "criticality": 2,
+      "respondent": 2,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": ["gap-8-01"]
+    },
+    {
+      "id": "gap-8-03",
+      "domain": 8,
+      "text": {
+        "en": "Do IT staff receive role-specific technical security training?",
+        "de": "Erhalten IT-Mitarbeiter rollenspezifische technische Sicherheitsschulungen?"
+      },
+      "plainText": {
+        "en": "Do the people managing your systems get deeper security training beyond what everyone else gets?",
+        "de": "Erhalten die Personen, die Ihre Systeme verwalten, tiefergehende Sicherheitsschulungen über das hinaus, was alle anderen bekommen?"
+      },
+      "legalBasis": "Art 21(2)(g)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-8-04",
+      "domain": 8,
+      "text": {
+        "en": "Is training completion tracked and documented per employee?",
+        "de": "Wird der Schulungsabschluss pro Mitarbeiter nachverfolgt und dokumentiert?"
+      },
+      "plainText": {
+        "en": "Can you show an auditor which employees completed training and when?",
+        "de": "Können Sie einem Prüfer zeigen, welche Mitarbeiter die Schulung abgeschlossen haben und wann?"
+      },
+      "legalBasis": "Art 21(2)(g)",
+      "criticality": 2,
+      "respondent": 2,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": ["gap-8-01"]
+    },
+    {
+      "id": "gap-8-05",
+      "domain": 8,
+      "text": {
+        "en": "Are new employees trained during onboarding?",
+        "de": "Werden neue Mitarbeiter während des Onboardings geschult?"
+      },
+      "plainText": {
+        "en": "When someone starts a new job at your company, do they learn about security in their first week?",
+        "de": "Wenn jemand neu in Ihrem Unternehmen anfängt, lernt er in der ersten Woche etwas über Sicherheit?"
+      },
+      "legalBasis": "Art 21(2)(g)",
+      "criticality": 1,
+      "respondent": 2,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-8-06",
+      "domain": 8,
+      "text": {
+        "en": "Is there a clean desk / clear screen policy?",
+        "de": "Gibt es eine Clean-Desk-/Clear-Screen-Richtlinie?"
+      },
+      "plainText": {
+        "en": "Are employees required to lock their screens and not leave sensitive documents out?",
+        "de": "Sind Mitarbeiter verpflichtet, ihre Bildschirme zu sperren und keine sensiblen Dokumente offen liegen zu lassen?"
+      },
+      "legalBasis": "Art 21(2)(g)",
+      "criticality": 0,
+      "respondent": 2,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-01",
+      "domain": 9,
+      "text": {
+        "en": "Do you have a documented cryptography policy?",
+        "de": "Haben Sie eine dokumentierte Kryptografierichtlinie?"
+      },
+      "plainText": {
+        "en": "Is there a written policy about how your company uses encryption? (Even a short one counts.)",
+        "de": "Gibt es eine schriftliche Richtlinie darüber, wie Ihr Unternehmen Verschlüsselung einsetzt? (Auch eine kurze zählt.)"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-02",
+      "domain": 9,
+      "text": {
+        "en": "Is data encrypted in transit (HTTPS for all web services, TLS for email)?",
+        "de": "Werden Daten bei der Übertragung verschlüsselt (HTTPS für alle Webdienste, TLS für E-Mail)?"
+      },
+      "plainText": {
+        "en": "When data travels between systems (website, email, file transfers), is it encrypted? Check: does your website show a padlock?",
+        "de": "Wenn Daten zwischen Systemen übertragen werden (Website, E-Mail, Dateitransfers), sind sie verschlüsselt? Prüfen Sie: Zeigt Ihre Website ein Schloss-Symbol?"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-03",
+      "domain": 9,
+      "text": {
+        "en": "Is data encrypted at rest where appropriate (disk encryption, database encryption)?",
+        "de": "Werden Daten im Ruhezustand wo angemessen verschlüsselt (Festplattenverschlüsselung, Datenbankverschlüsselung)?"
+      },
+      "plainText": {
+        "en": "Are your laptops encrypted? (Windows BitLocker, Mac FileVault?) What about server hard drives?",
+        "de": "Sind Ihre Laptops verschlüsselt? (Windows BitLocker, Mac FileVault?) Was ist mit den Festplatten der Server?"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-04",
+      "domain": 9,
+      "text": {
+        "en": "Do you have a process for managing encryption keys?",
+        "de": "Haben Sie einen Prozess für das Management von Verschlüsselungsschlüsseln?"
+      },
+      "plainText": {
+        "en": "If you use encryption, who has the keys? What happens if that person leaves?",
+        "de": "Wenn Sie Verschlüsselung nutzen, wer hat die Schlüssel? Was passiert, wenn diese Person das Unternehmen verlässt?"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-01",
+      "domain": 10,
+      "text": {
+        "en": "Do you have a documented access control policy?",
+        "de": "Haben Sie eine dokumentierte Zugangskontrollrichtlinie?"
+      },
+      "plainText": {
+        "en": "Is there a written rule about who gets access to which systems?",
+        "de": "Gibt es eine schriftliche Regelung darüber, wer Zugang zu welchen Systemen erhält?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-02",
+      "domain": 10,
+      "text": {
+        "en": "Is access granted based on the principle of least privilege?",
+        "de": "Wird Zugang nach dem Prinzip der geringsten Berechtigung gewährt?"
+      },
+      "plainText": {
+        "en": "Do people only have access to the systems they need for their job -- nothing more?",
+        "de": "Haben Personen nur Zugang zu den Systemen, die sie für ihre Arbeit benötigen -- nicht mehr?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": ["gap-10-01"]
+    },
+    {
+      "id": "gap-10-03",
+      "domain": 10,
+      "text": {
+        "en": "Are access rights reviewed at least annually?",
+        "de": "Werden Zugriffsrechte mindestens jährlich überprüft?"
+      },
+      "plainText": {
+        "en": "Does someone check once a year: \"does this person still need access to this system?\"",
+        "de": "Prüft jemand einmal im Jahr: \"Braucht diese Person noch Zugang zu diesem System?\""
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": ["gap-10-01"]
+    },
+    {
+      "id": "gap-10-04",
+      "domain": 10,
+      "text": {
+        "en": "Is there a process for revoking access when employees leave or change roles?",
+        "de": "Gibt es einen Prozess zum Entzug von Zugriffsrechten, wenn Mitarbeiter ausscheiden oder ihre Rolle wechseln?"
+      },
+      "plainText": {
+        "en": "When someone quits or changes department, is their access removed the same day?",
+        "de": "Wenn jemand kündigt oder die Abteilung wechselt, wird sein Zugang am selben Tag entzogen?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-05",
+      "domain": 10,
+      "text": {
+        "en": "Are privileged accounts (admin rights) managed separately and monitored?",
+        "de": "Werden privilegierte Konten (Admin-Rechte) separat verwaltet und überwacht?"
+      },
+      "plainText": {
+        "en": "Do admin accounts have extra security? Do you know who has them?",
+        "de": "Haben Admin-Konten zusätzliche Sicherheit? Wissen Sie, wer sie hat?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-06",
+      "domain": 10,
+      "text": {
+        "en": "Is multi-factor authentication (MFA) enabled for all remote access?",
+        "de": "Ist Multi-Faktor-Authentifizierung (MFA) für alle Fernzugriffe aktiviert?"
+      },
+      "plainText": {
+        "en": "When employees work from home or log in remotely, do they need more than just a password? (e.g., phone app, text code)",
+        "de": "Wenn Mitarbeiter von zu Hause arbeiten oder sich remote einloggen, brauchen sie mehr als nur ein Passwort? (z.B. Smartphone-App, SMS-Code)"
+      },
+      "legalBasis": "Art 21(2)(j)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-07",
+      "domain": 10,
+      "text": {
+        "en": "Is MFA enabled for all access to critical systems and admin panels?",
+        "de": "Ist MFA für den Zugang zu allen kritischen Systemen und Admin-Oberflächen aktiviert?"
+      },
+      "plainText": {
+        "en": "Do your most important systems require MFA, even from the office?",
+        "de": "Erfordern Ihre wichtigsten Systeme MFA, auch vom Büro aus?"
+      },
+      "legalBasis": "Art 21(2)(j)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-08",
+      "domain": 10,
+      "text": {
+        "en": "Is there a password policy meeting current standards?",
+        "de": "Gibt es eine Passwortrichtlinie, die aktuellen Standards entspricht?"
+      },
+      "plainText": {
+        "en": "Do you require strong passwords (12+ characters, no reuse)?",
+        "de": "Verlangen Sie starke Passwörter (12+ Zeichen, keine Wiederverwendung)?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-09",
+      "domain": 10,
+      "text": {
+        "en": "Are security responsibilities included in employment contracts?",
+        "de": "Sind Sicherheitsverantwortlichkeiten in Arbeitsverträgen enthalten?"
+      },
+      "plainText": {
+        "en": "Do employment contracts mention that employees must follow security policies?",
+        "de": "Erwähnen Arbeitsverträge, dass Mitarbeiter Sicherheitsrichtlinien befolgen müssen?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 1,
+      "respondent": 2,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-10-10",
+      "domain": 10,
+      "text": {
+        "en": "Is there an offboarding process that includes revoking all access?",
+        "de": "Gibt es einen Offboarding-Prozess, der den Entzug aller Zugriffsrechte umfasst?"
+      },
+      "plainText": {
+        "en": "When someone leaves, is there a checklist that includes disabling every account and collecting every device?",
+        "de": "Wenn jemand das Unternehmen verlässt, gibt es eine Checkliste, die das Deaktivieren aller Konten und Einsammeln aller Geräte umfasst?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 2,
+      "respondent": 2,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-11-01",
+      "domain": 11,
+      "text": {
+        "en": "Are internal communications channels secured?",
+        "de": "Sind interne Kommunikationskanäle gesichert?"
+      },
+      "plainText": {
+        "en": "Is your company email encrypted? Do you use secure messaging (Teams, Signal) instead of unencrypted SMS for sensitive topics?",
+        "de": "Ist Ihre Firmen-E-Mail verschlüsselt? Nutzen Sie sichere Messenger (Teams, Signal) statt unverschlüsselter SMS für sensible Themen?"
+      },
+      "legalBasis": "Art 21(2)(j)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-11-02",
+      "domain": 11,
+      "text": {
+        "en": "Are emergency/out-of-band communication channels defined for crisis situations?",
+        "de": "Sind Notfall-/Out-of-Band-Kommunikationskanäle für Krisensituationen definiert?"
+      },
+      "plainText": {
+        "en": "If your email goes down during a cyberattack, how does the team communicate? Is there a backup plan (phone tree, Signal group, personal email list)?",
+        "de": "Wenn Ihre E-Mail während eines Cyberangriffs ausfällt, wie kommuniziert das Team? Gibt es einen Backup-Plan (Telefonkette, Signal-Gruppe, private E-Mail-Liste)?"
+      },
+      "legalBasis": "Art 21(2)(j)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 0,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-11-03",
+      "domain": 11,
+      "text": {
+        "en": "Is there a policy for secure use of mobile devices?",
+        "de": "Gibt es eine Richtlinie für die sichere Nutzung mobiler Geräte?"
+      },
+      "plainText": {
+        "en": "Are company phones and personal phones used for work covered by security rules? (Screen lock, encryption, remote wipe?)",
+        "de": "Unterliegen Firmenhandys und private Handys, die für die Arbeit genutzt werden, Sicherheitsregeln? (Bildschirmsperre, Verschlüsselung, Fernlöschung?)"
+      },
+      "legalBasis": "Art 21(2)(j)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-12-01",
+      "domain": 12,
+      "text": {
+        "en": "Do you have a firewall protecting your network?",
+        "de": "Haben Sie eine Firewall, die Ihr Netzwerk schützt?"
+      },
+      "plainText": {
+        "en": "Is there a firewall between your company network and the internet?",
+        "de": "Gibt es eine Firewall zwischen Ihrem Unternehmensnetzwerk und dem Internet?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-12-02",
+      "domain": 12,
+      "text": {
+        "en": "Is your WiFi network secured and separate from guest access?",
+        "de": "Ist Ihr WLAN-Netzwerk gesichert und vom Gastzugang getrennt?"
+      },
+      "plainText": {
+        "en": "Is your company WiFi password-protected? Is the guest WiFi on a separate network from your business systems?",
+        "de": "Ist Ihr Firmen-WLAN passwortgeschützt? Ist das Gäste-WLAN in einem separaten Netzwerk von Ihren Geschäftssystemen?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-12-03",
+      "domain": 12,
+      "text": {
+        "en": "If you have operational technology (OT) or industrial systems, are they on a separate network from office IT?",
+        "de": "Wenn Sie Betriebstechnologie (OT) oder industrielle Systeme haben, befinden sich diese in einem separaten Netzwerk von der Büro-IT?"
+      },
+      "plainText": {
+        "en": "Are your production/manufacturing systems on a different network than your office computers and email?",
+        "de": "Befinden sich Ihre Produktions-/Fertigungssysteme in einem anderen Netzwerk als Ihre Bürocomputer und E-Mail?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 3,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-12-04",
+      "domain": 12,
+      "text": {
+        "en": "Do you have intrusion detection or prevention systems?",
+        "de": "Haben Sie Systeme zur Erkennung oder Verhinderung von Eindringlingen (IDS/IPS)?"
+      },
+      "plainText": {
+        "en": "Is there anything watching your network for suspicious activity?",
+        "de": "Gibt es etwas, das Ihr Netzwerk auf verdächtige Aktivitäten überwacht?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 3,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-13-01",
+      "domain": 13,
+      "text": {
+        "en": "Is access to server rooms, network equipment, and critical IT infrastructure physically restricted?",
+        "de": "Ist der Zugang zu Serverräumen, Netzwerkausrüstung und kritischer IT-Infrastruktur physisch eingeschränkt?"
+      },
+      "plainText": {
+        "en": "Is your server room locked? Can random employees or visitors walk in?",
+        "de": "Ist Ihr Serverraum abgeschlossen? Können beliebige Mitarbeiter oder Besucher einfach hineingehen?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-13-02",
+      "domain": 13,
+      "text": {
+        "en": "Are physical access controls in place for the office (keycards, visitor logs)?",
+        "de": "Gibt es physische Zugangskontrollen für das Büro (Schlüsselkarten, Besucherprotokolle)?"
+      },
+      "plainText": {
+        "en": "Do you control who enters the building? Do visitors sign in?",
+        "de": "Kontrollieren Sie, wer das Gebäude betritt? Melden sich Besucher an?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 1,
+      "respondent": 4,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-13-03",
+      "domain": 13,
+      "text": {
+        "en": "Are critical IT systems protected against environmental risks (fire, water, power failure)?",
+        "de": "Sind kritische IT-Systeme gegen Umweltrisiken geschützt (Feuer, Wasser, Stromausfall)?"
+      },
+      "plainText": {
+        "en": "Do you have fire suppression, UPS (battery backup), and protection against flooding in your server room?",
+        "de": "Haben Sie Brandschutz, USV (Batteriepufferung) und Schutz gegen Überflutung in Ihrem Serverraum?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-14-01",
+      "domain": 14,
+      "text": {
+        "en": "Are all security policies signed by management with dates?",
+        "de": "Sind alle Sicherheitsrichtlinien von der Geschäftsleitung mit Datum unterzeichnet?"
+      },
+      "plainText": {
+        "en": "Can you show a signed, dated document for each of your security policies?",
+        "de": "Können Sie für jede Ihrer Sicherheitsrichtlinien ein unterschriebenes, datiertes Dokument vorzeigen?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 0,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-14-02",
+      "domain": 14,
+      "text": {
+        "en": "Do you maintain an audit trail of security-relevant decisions and changes?",
+        "de": "Führen Sie eine Audit-Spur über sicherheitsrelevante Entscheidungen und Änderungen?"
+      },
+      "plainText": {
+        "en": "If the BSI asks \"who decided to accept this risk and when?\", can you show them?",
+        "de": "Wenn das BSI fragt \"Wer hat entschieden, dieses Risiko zu akzeptieren, und wann?\", können Sie es nachweisen?"
+      },
+      "legalBasis": "§30 BSIG",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-14-03",
+      "domain": 14,
+      "text": {
+        "en": "Can you produce evidence of your security measures on request?",
+        "de": "Können Sie auf Anfrage Nachweise Ihrer Sicherheitsmaßnahmen vorlegen?"
+      },
+      "plainText": {
+        "en": "If an auditor says \"show me your MFA is enabled,\" can you take a screenshot right now?",
+        "de": "Wenn ein Prüfer sagt \"Zeigen Sie mir, dass Ihre MFA aktiviert ist\", können Sie jetzt sofort einen Screenshot machen?"
+      },
+      "legalBasis": "§39 BSIG",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-14-04",
+      "domain": 14,
+      "text": {
+        "en": "Are evidence documents timestamped?",
+        "de": "Sind Nachweisdokumente mit Zeitstempeln versehen?"
+      },
+      "plainText": {
+        "en": "Do your screenshots and documents have dates on them?",
+        "de": "Haben Ihre Screenshots und Dokumente ein Datum?"
+      },
+      "legalBasis": "BSI guidance",
+      "criticality": 0,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 0,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-14-05",
+      "domain": 14,
+      "text": {
+        "en": "Is there a central location for all compliance documentation?",
+        "de": "Gibt es einen zentralen Ablageort für alle Compliance-Dokumentation?"
+      },
+      "plainText": {
+        "en": "Is all your security documentation in one place, or scattered across email, SharePoint, local drives, and someone's head?",
+        "de": "Ist Ihre gesamte Sicherheitsdokumentation an einem Ort, oder verteilt über E-Mail, SharePoint, lokale Laufwerke und den Kopf von jemandem?"
+      },
+      "legalBasis": "Best practice",
+      "criticality": 0,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-14-06",
+      "domain": 14,
+      "text": {
+        "en": "Is documentation versioned and change-tracked?",
+        "de": "Ist die Dokumentation versioniert und werden Änderungen nachverfolgt?"
+      },
+      "plainText": {
+        "en": "Can you show what changed between version 1 and version 2 of a policy?",
+        "de": "Können Sie zeigen, was sich zwischen Version 1 und Version 2 einer Richtlinie geändert hat?"
+      },
+      "legalBasis": "Best practice",
+      "criticality": 0,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-14-07",
+      "domain": 14,
+      "text": {
+        "en": "Could you respond to a BSI information request within the timeframe required?",
+        "de": "Könnten Sie auf eine BSI-Informationsanfrage innerhalb der geforderten Frist antworten?"
+      },
+      "plainText": {
+        "en": "If the BSI sends you a letter asking for evidence, can you respond quickly -- or would it take weeks to gather everything?",
+        "de": "Wenn das BSI Ihnen einen Brief mit der Bitte um Nachweise schickt, können Sie schnell antworten -- oder würde es Wochen dauern, alles zusammenzustellen?"
+      },
+      "legalBasis": "§40 BSIG",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    }
+  ]
+}
