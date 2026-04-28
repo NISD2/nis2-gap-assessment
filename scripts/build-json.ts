@@ -1,26 +1,42 @@
 /**
- * Regenerate data/gap-assessment.json from src/domains.ts + src/questions/*.ts.
+ * Regenerate the published artefacts from src/domains.ts + src/questions/*.ts:
  *
- * The TypeScript source files are the source of truth. This script writes
- * the JSON artefact that ships to non-TS consumers.
+ *   data/gap-assessment.json         — the assessment data, validated
+ *   schema/gap-assessment.schema.json — JSON Schema for non-TS consumers
  *
- * Run after editing any TS source file:
+ * The TypeScript source files are the source of truth. Run after editing any
+ * of them:
+ *
  *   bun run build:json
  *
- * CI runs this script and fails if the JSON in the working tree doesn't
- * match the generated output (drift detection).
+ * CI runs this and fails if either artefact differs from what the TS would
+ * generate (drift detection).
  */
-import { writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { zodToJsonSchema } from "zod-to-json-schema";
 import { gapAssessment } from "../src/data";
+import { gapAssessmentDataSchema } from "../src/schema";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const outPath = join(here, "..", "data", "gap-assessment.json");
+const root = join(here, "..");
 
-const out = JSON.stringify(gapAssessment, null, 2) + "\n";
-writeFileSync(outPath, out);
+const dataPath = join(root, "data", "gap-assessment.json");
+const dataOut = JSON.stringify(gapAssessment, null, 2) + "\n";
+writeFileSync(dataPath, dataOut);
+
+const schemaDir = join(root, "schema");
+mkdirSync(schemaDir, { recursive: true });
+const schemaPath = join(schemaDir, "gap-assessment.schema.json");
+const jsonSchema = zodToJsonSchema(gapAssessmentDataSchema, {
+  name: "GapAssessment",
+  $refStrategy: "none",
+});
+const schemaOut = JSON.stringify(jsonSchema, null, 2) + "\n";
+writeFileSync(schemaPath, schemaOut);
 
 console.log(
-  `OK: wrote ${outPath} (${gapAssessment.domains.length} domains, ${gapAssessment.questions.length} questions, v${gapAssessment.version})`,
+  `OK: ${dataPath} (${gapAssessment.domains.length} domains, ${gapAssessment.questions.length} questions, v${gapAssessment.version})`,
 );
+console.log(`OK: ${schemaPath}`);

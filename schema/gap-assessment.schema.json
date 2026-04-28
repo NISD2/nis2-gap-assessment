@@ -1,0 +1,228 @@
+{
+  "$ref": "#/definitions/GapAssessment",
+  "definitions": {
+    "GapAssessment": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "lastUpdated": {
+          "type": "string"
+        },
+        "domains": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 14
+              },
+              "code": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 8
+              },
+              "name": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "de": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "de"
+                ],
+                "additionalProperties": false
+              },
+              "description": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "de": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "de"
+                ],
+                "additionalProperties": false
+              },
+              "day": {
+                "type": "number",
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "code",
+              "name",
+              "description",
+              "day"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 15,
+          "maxItems": 15
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "domain": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 14
+              },
+              "text": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "de": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "de"
+                ],
+                "additionalProperties": false
+              },
+              "plainText": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "de": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "de"
+                ],
+                "additionalProperties": false
+              },
+              "legalBasis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "criticality": {
+                "type": "number",
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "respondent": {
+                "type": "number",
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              "consequence": {
+                "type": "number",
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "fineExposure": {
+                "type": "boolean"
+              },
+              "timeToFix": {
+                "type": "number",
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "day": {
+                "type": "number",
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              "dependsOn": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "domain",
+              "text",
+              "plainText",
+              "legalBasis",
+              "criticality",
+              "respondent",
+              "consequence",
+              "fineExposure",
+              "timeToFix",
+              "day",
+              "dependsOn"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "version",
+        "lastUpdated",
+        "domains",
+        "questions"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
