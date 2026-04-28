@@ -1,12 +1,47 @@
 # NIS2 Gap Assessment
 
 [![License: MIT + CC BY 4.0](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-blue.svg)](./LICENSE)
+[![CI](https://github.com/NISD2/nis2-gap-assessment/actions/workflows/validate.yml/badge.svg)](https://github.com/NISD2/nis2-gap-assessment/actions/workflows/validate.yml)
 
-**An open NIS2 gap assessment as a typed Zod schema.** 116 questions, 15 domains, 5-day completion structure. Each question is anchored to a specific source — NIS2 Directive (EU) 2022/2555, BSIG (Germany), CIR 2024/2690 (EU), or BSI IT-Grundschutz.
+**An open NIS2 gap assessment as a typed Zod schema.** 116 questions, 15 domains, 5-day completion structure. Each question is anchored to a primary source — NIS2 Directive (EU) 2022/2555, BSIG (Germany), CIR 2024/2690 (EU), or BSI IT-Grundschutz.
 
 Maintained by [Kardashev Catalyst UG](https://nisd2.eu) — operator of [nisd2.eu](https://nisd2.eu) — and the same schema that powers [nisd2.eu/nis2-gap-assessment](https://nisd2.eu/nis2-gap-assessment).
 
-Source of truth lives in [`src/domains.ts`](./src/domains.ts) and [`src/questions/day-<n>.ts`](./src/questions/) — typed, with full TypeScript autocomplete on enums and IDs. The bundled JSON at [`data/gap-assessment.json`](./data/gap-assessment.json) is generated from these files for non-TS consumers.
+## Contents
+
+- [Quickstart](#quickstart) — score a company in 30 seconds
+- [Why a schema, not just a JSON file](#why-a-schema-not-just-a-json-file)
+- [Install](#install)
+- [Usage](#usage)
+- [Domains and days](#domains-and-days)
+- [Scoring](#scoring)
+- [Question shape](#question-shape)
+- [What this is NOT](#what-this-is-not)
+- [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md) · [Changelog](./CHANGELOG.md)
+
+## Quickstart
+
+```bash
+bun add github:NISD2/nis2-gap-assessment#v1.2.0
+```
+
+```ts
+import {
+  gapAssessment,
+  computeScores,
+  ANSWER,
+} from "@nisd2/nis2-gap-assessment";
+
+const answers = {
+  "gap-0-01": ANSWER.YES,
+  "gap-0-02": ANSWER.PARTIALLY,
+};
+
+const scores = computeScores(gapAssessment.questions, answers);
+console.log(`Overall: ${scores.overall}%, top gaps:`, scores.gaps.slice(0, 5));
+```
+
+That's it. You now have 116 NIS2-anchored gap-assessment questions across 15 domains, with reference scoring logic.
 
 ---
 
@@ -15,9 +50,9 @@ Source of truth lives in [`src/domains.ts`](./src/domains.ts) and [`src/question
 A JSON-only release is a dead artefact: nobody can validate it without re-deriving the rules, and forks drift silently. The TypeScript source files + Zod schema are alive:
 
 - **TypeScript consumers** import the data directly and get full type safety, autocomplete on enums (`CRITICALITY.HIGH`, `RESPONDENT.CEO`, etc.), and inline IDE hints.
-- **Non-TS consumers** read the bundled `data/gap-assessment.json` directly, or generate JSON Schema via [`zod-to-json-schema`](https://github.com/StefanTerdell/zod-to-json-schema) and use it from Python, Go, Rust, regulators' Excel rigs, anywhere.
+- **Non-TS consumers** read the bundled `data/gap-assessment.json` directly, or use the published JSON Schema at [`schema/gap-assessment.schema.json`](./schema/gap-assessment.schema.json) from Python, Go, Rust, regulators' Excel rigs, anywhere.
 - **Drizzle / Prisma / Kysely consumers** see `examples/drizzle-storage-reference.ts` for a suggested response-storage layer keyed to our question IDs.
-- **Forks stay honest** — the JSON is regenerated from TS via `bun run build:json`; CI fails if it drifts.
+- **Forks stay honest** — the JSON is regenerated from TS via `bun run build:json`; CI fails if either the JSON data or the JSON Schema drifts.
 
 ### Source layout
 
@@ -61,7 +96,7 @@ bun add @nisd2/nis2-gap-assessment
 Or pin to a specific commit / tag without npm:
 
 ```bash
-npm install github:NISD2/nis2-gap-assessment#v1.1.0
+npm install github:NISD2/nis2-gap-assessment#v1.2.0
 ```
 
 ---

@@ -1,6 +1,6 @@
 {
   "name": "@nisd2/nis2-gap-assessment",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Open NIS2 gap assessment — 116 questions across 15 domains, with legal citations to NIS2, BSIG, CIR 2024/2690, and IT-Grundschutz. Zod schema as source of truth, TypeScript types, reference scoring logic.",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/NISD2/nis2-gap-assessment",
@@ -42,28 +42,33 @@
       "types": "./dist/data.d.ts",
       "import": "./dist/data.js"
     },
-    "./data/gap-assessment.json": "./data/gap-assessment.json"
+    "./data/gap-assessment.json": "./data/gap-assessment.json",
+    "./schema/gap-assessment.schema.json": "./schema/gap-assessment.schema.json"
   },
   "files": [
     "dist",
     "data",
+    "schema",
     "src",
     "examples",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
+    "test": "bun test",
     "build:json": "bun scripts/build-json.ts",
     "validate": "bun src/data.ts && echo 'OK: TS source validates against schema'",
-    "check:json-in-sync": "bun scripts/build-json.ts && git diff --exit-code data/gap-assessment.json"
+    "check:json-in-sync": "bun scripts/build-json.ts && git diff --exit-code data/gap-assessment.json schema/gap-assessment.schema.json"
   },
   "dependencies": {
     "zod": "^3.23.0"
   },
   "devDependencies": {
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "zod-to-json-schema": "^3.25.2"
   },
   "publishConfig": {
     "access": "public"
