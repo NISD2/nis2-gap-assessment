@@ -4,6 +4,10 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+### Changed
+- **Repository and package renamed.** `nis2-gap-assessment` → `nis2-gap-assessment-schema`. The `-schema` suffix clarifies what this package actually is: a data + schema artefact, not an app or runtime. Old GitHub URL auto-redirects.
+- **Package name** is now `@nisd2/nis2-gap-assessment-schema`. Code-level identifiers, exports, scoring logic, and question IDs are unchanged.
+
 ## [1.3.2] — 2026-04-28
 
 ### Changed

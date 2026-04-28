@@ -21,8 +21,8 @@ Thanks for taking the time. This repo is small and opinionated. Read this once b
 ## Local setup
 
 ```bash
-git clone git@github.com:NISD2/nis2-gap-assessment.git
-cd nis2-gap-assessment
+git clone git@github.com:NISD2/nis2-gap-assessment-schema.git
+cd nis2-gap-assessment-schema
 bun install --no-save
 bun test
 bun run typecheck

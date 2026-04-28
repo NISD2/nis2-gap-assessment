@@ -1,7 +1,7 @@
 # NIS2 Gap Assessment
 
 [![License: MIT + CC BY 4.0](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-blue.svg)](./LICENSE)
-[![CI](https://github.com/NISD2/nis2-gap-assessment/actions/workflows/validate.yml/badge.svg)](https://github.com/NISD2/nis2-gap-assessment/actions/workflows/validate.yml)
+[![CI](https://github.com/NISD2/nis2-gap-assessment-schema/actions/workflows/validate.yml/badge.svg)](https://github.com/NISD2/nis2-gap-assessment-schema/actions/workflows/validate.yml)
 
 **An open data format.** The questions a NIS2-regulated entity needs to ask itself to find compliance gaps, expressed once as a typed Zod schema with reference scoring logic, and published as JSON + JSON Schema.
 
@@ -11,7 +11,7 @@ It exists because every Mittelstand and every consultancy in Germany is currentl
 
 Not an app, not a SaaS, not a UI. There is no backend, no auth, no database. Bring your own.
 
-The reference implementation is at [nisd2.eu/nis2-gap-assessment](https://nisd2.eu/nis2-gap-assessment), which uses this exact data format. You are free to build your own.
+The reference implementation is at [nisd2.eu/nis2-gap-assessment-schema](https://nisd2.eu/nis2-gap-assessment-schema), which uses this exact data format. You are free to build your own.
 
 ## What's in it
 
@@ -35,7 +35,7 @@ The reference implementation is at [nisd2.eu/nis2-gap-assessment](https://nisd2.
 This package is **not on the npm registry** — install directly from GitHub.
 
 ```bash
-bun add github:NISD2/nis2-gap-assessment#v1.3.1
+bun add github:NISD2/nis2-gap-assessment-schema#v1.3.1
 # npm, pnpm, yarn — same syntax
 ```
 
@@ -48,7 +48,7 @@ import {
   gapAssessment,
   computeScores,
   ANSWER,
-} from "@nisd2/nis2-gap-assessment";
+} from "@nisd2/nis2-gap-assessment-schema";
 
 const answers = {
   "gap-0-01": ANSWER.YES,
@@ -88,7 +88,7 @@ Structured guidance based on our reading of NIS2, BSIG, CIR 2024/2690, and BSI I
 
 ## Companion repo
 
-[NISD2/nis2-supply-chain-questionnaire](https://github.com/NISD2/nis2-supply-chain-questionnaire) — same data-format approach for the NIS2 supply-chain due diligence questionnaire.
+[NISD2/nis2-supply-chain-questionnaire-schema](https://github.com/NISD2/nis2-supply-chain-questionnaire-schema) — same data-format approach for the NIS2 supply-chain due diligence questionnaire.
 
 ## Contributing · Security · Changelog
 

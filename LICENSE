@@ -15,7 +15,7 @@ give appropriate credit. Suggested attribution:
 
     "Based on the NIS2 Gap Assessment by Kardashev Catalyst UG / nisd2.eu,
      licensed under CC BY 4.0.
-     https://github.com/NISD2/nis2-gap-assessment"
+     https://github.com/NISD2/nis2-gap-assessment-schema"
 
 ------------------------------------------------------------------------------
 2. CODE — Zod schema, scoring logic, TypeScript types, examples
