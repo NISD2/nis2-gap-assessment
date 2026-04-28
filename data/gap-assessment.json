@@ -1,110 +1,200 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2026-04-25",
+  "version": "1.1.0",
+  "lastUpdated": "2026-04-28",
   "domains": [
     {
       "id": 0,
       "code": "SCOPE",
-      "name": { "en": "Scoping & Registration", "de": "Anwendungsbereich & Registrierung" },
-      "description": { "en": "Before anything else: are you in scope, and have you registered?", "de": "Zuallererst: Sind Sie betroffen, und haben Sie sich registriert?" },
+      "name": {
+        "en": "Scoping & Registration",
+        "de": "Anwendungsbereich & Registrierung"
+      },
+      "description": {
+        "en": "Before anything else: are you in scope, and have you registered?",
+        "de": "Zuallererst: Sind Sie betroffen, und haben Sie sich registriert?"
+      },
       "day": 1
     },
     {
       "id": 1,
       "code": "GOV",
-      "name": { "en": "Governance & Management Liability", "de": "Governance & Geschäftsleitungshaftung" },
-      "description": { "en": "The CEO is personally liable. This domain tests whether management knows, understands, and has acted.", "de": "Die Geschäftsführung haftet persönlich. Dieser Bereich prüft, ob das Management informiert ist, die Pflichten versteht und gehandelt hat." },
+      "name": {
+        "en": "Governance & Management Liability",
+        "de": "Governance & Geschäftsleitungshaftung"
+      },
+      "description": {
+        "en": "The CEO is personally liable. This domain tests whether management knows, understands, and has acted.",
+        "de": "Die Geschäftsführung haftet persönlich. Dieser Bereich prüft, ob das Management informiert ist, die Pflichten versteht und gehandelt hat."
+      },
       "day": 1
     },
     {
       "id": 2,
       "code": "RISK",
-      "name": { "en": "Risk Management", "de": "Risikomanagement" },
-      "description": { "en": "Do you know what you have, what can go wrong, and what you're doing about it?", "de": "Wissen Sie, was Sie haben, was schiefgehen kann und was Sie dagegen tun?" },
+      "name": {
+        "en": "Risk Management",
+        "de": "Risikomanagement"
+      },
+      "description": {
+        "en": "Do you know what you have, what can go wrong, and what you're doing about it?",
+        "de": "Wissen Sie, was Sie haben, was schiefgehen kann und was Sie dagegen tun?"
+      },
       "day": 2
     },
     {
       "id": 3,
       "code": "INC",
-      "name": { "en": "Incident Handling", "de": "Vorfallbehandlung" },
-      "description": { "en": "Can you detect, respond to, and report security incidents?", "de": "Können Sie Sicherheitsvorfälle erkennen, darauf reagieren und sie melden?" },
+      "name": {
+        "en": "Incident Handling",
+        "de": "Vorfallbehandlung"
+      },
+      "description": {
+        "en": "Can you detect, respond to, and report security incidents?",
+        "de": "Können Sie Sicherheitsvorfälle erkennen, darauf reagieren und sie melden?"
+      },
       "day": 3
     },
     {
       "id": 4,
       "code": "BCP",
-      "name": { "en": "Business Continuity", "de": "Betriebskontinuität" },
-      "description": { "en": "If your systems go down, can you keep your business running?", "de": "Wenn Ihre Systeme ausfallen, können Sie den Geschäftsbetrieb aufrechterhalten?" },
+      "name": {
+        "en": "Business Continuity",
+        "de": "Betriebskontinuität"
+      },
+      "description": {
+        "en": "If your systems go down, can you keep your business running?",
+        "de": "Wenn Ihre Systeme ausfallen, können Sie den Geschäftsbetrieb aufrechterhalten?"
+      },
       "day": 3
     },
     {
       "id": 5,
       "code": "SUP",
-      "name": { "en": "Supply Chain Security", "de": "Lieferkettensicherheit" },
-      "description": { "en": "Are your suppliers secure, and can you prove your own security to your customers?", "de": "Sind Ihre Lieferanten sicher, und können Sie Ihre eigene Sicherheit gegenüber Ihren Kunden nachweisen?" },
+      "name": {
+        "en": "Supply Chain Security",
+        "de": "Lieferkettensicherheit"
+      },
+      "description": {
+        "en": "Are your suppliers secure, and can you prove your own security to your customers?",
+        "de": "Sind Ihre Lieferanten sicher, und können Sie Ihre eigene Sicherheit gegenüber Ihren Kunden nachweisen?"
+      },
       "day": 4
     },
     {
       "id": 6,
       "code": "DEV",
-      "name": { "en": "Secure Development & Procurement", "de": "Sichere Entwicklung & Beschaffung" },
-      "description": { "en": "Are you buying and building systems securely?", "de": "Beschaffen und entwickeln Sie Systeme sicher?" },
+      "name": {
+        "en": "Secure Development & Procurement",
+        "de": "Sichere Entwicklung & Beschaffung"
+      },
+      "description": {
+        "en": "Are you buying and building systems securely?",
+        "de": "Beschaffen und entwickeln Sie Systeme sicher?"
+      },
       "day": 5
     },
     {
       "id": 7,
       "code": "EFF",
-      "name": { "en": "Effectiveness Assessment", "de": "Wirksamkeitsbewertung" },
-      "description": { "en": "How do you know your security actually works?", "de": "Woher wissen Sie, dass Ihre Sicherheitsmaßnahmen tatsächlich funktionieren?" },
+      "name": {
+        "en": "Effectiveness Assessment",
+        "de": "Wirksamkeitsbewertung"
+      },
+      "description": {
+        "en": "How do you know your security actually works?",
+        "de": "Woher wissen Sie, dass Ihre Sicherheitsmaßnahmen tatsächlich funktionieren?"
+      },
       "day": 5
     },
     {
       "id": 8,
       "code": "TRN",
-      "name": { "en": "Cyber Hygiene & Training", "de": "Cyberhygiene & Schulungen" },
-      "description": { "en": "Do your employees know how to stay safe online?", "de": "Wissen Ihre Mitarbeiter, wie sie sich online sicher verhalten?" },
+      "name": {
+        "en": "Cyber Hygiene & Training",
+        "de": "Cyberhygiene & Schulungen"
+      },
+      "description": {
+        "en": "Do your employees know how to stay safe online?",
+        "de": "Wissen Ihre Mitarbeiter, wie sie sich online sicher verhalten?"
+      },
       "day": 4
     },
     {
       "id": 9,
       "code": "CRY",
-      "name": { "en": "Cryptography", "de": "Kryptografie" },
-      "description": { "en": "Are you using encryption to protect data?", "de": "Nutzen Sie Verschlüsselung zum Schutz Ihrer Daten?" },
+      "name": {
+        "en": "Cryptography",
+        "de": "Kryptografie"
+      },
+      "description": {
+        "en": "Are you using encryption to protect data?",
+        "de": "Nutzen Sie Verschlüsselung zum Schutz Ihrer Daten?"
+      },
       "day": 5
     },
     {
       "id": 10,
       "code": "ACC",
-      "name": { "en": "Access Control", "de": "Zugangskontrolle" },
-      "description": { "en": "Who has access to what, and is it controlled?", "de": "Wer hat Zugang wozu, und ist dieser kontrolliert?" },
+      "name": {
+        "en": "Access Control",
+        "de": "Zugangskontrolle"
+      },
+      "description": {
+        "en": "Who has access to what, and is it controlled?",
+        "de": "Wer hat Zugang wozu, und ist dieser kontrolliert?"
+      },
       "day": 4
     },
     {
       "id": 11,
       "code": "COM",
-      "name": { "en": "Secure Communications", "de": "Sichere Kommunikation" },
-      "description": { "en": "Can you communicate securely, especially during a crisis?", "de": "Können Sie sicher kommunizieren, insbesondere während einer Krise?" },
+      "name": {
+        "en": "Secure Communications",
+        "de": "Sichere Kommunikation"
+      },
+      "description": {
+        "en": "Can you communicate securely, especially during a crisis?",
+        "de": "Können Sie sicher kommunizieren, insbesondere während einer Krise?"
+      },
       "day": 5
     },
     {
       "id": 12,
       "code": "NET",
-      "name": { "en": "Network Security", "de": "Netzwerksicherheit" },
-      "description": { "en": "Are your networks protected?", "de": "Sind Ihre Netzwerke geschützt?" },
+      "name": {
+        "en": "Network Security",
+        "de": "Netzwerksicherheit"
+      },
+      "description": {
+        "en": "Are your networks protected?",
+        "de": "Sind Ihre Netzwerke geschützt?"
+      },
       "day": 5
     },
     {
       "id": 13,
       "code": "PHY",
-      "name": { "en": "Physical Security", "de": "Physische Sicherheit" },
-      "description": { "en": "Is your physical space secure?", "de": "Sind Ihre Räumlichkeiten physisch gesichert?" },
+      "name": {
+        "en": "Physical Security",
+        "de": "Physische Sicherheit"
+      },
+      "description": {
+        "en": "Is your physical space secure?",
+        "de": "Sind Ihre Räumlichkeiten physisch gesichert?"
+      },
       "day": 4
     },
     {
       "id": 14,
       "code": "EVD",
-      "name": { "en": "Evidence & Documentation", "de": "Nachweise & Dokumentation" },
-      "description": { "en": "Can you prove all of the above to an auditor?", "de": "Können Sie all das einem Prüfer nachweisen?" },
+      "name": {
+        "en": "Evidence & Documentation",
+        "de": "Nachweise & Dokumentation"
+      },
+      "description": {
+        "en": "Can you prove all of the above to an auditor?",
+        "de": "Können Sie all das einem Prüfer nachweisen?"
+      },
       "day": 5
     }
   ],
@@ -247,7 +337,9 @@
       "fineExposure": true,
       "timeToFix": 0,
       "day": 1,
-      "dependsOn": ["gap-0-06"]
+      "dependsOn": [
+        "gap-0-06"
+      ]
     },
     {
       "id": "gap-0-08",
@@ -267,7 +359,9 @@
       "fineExposure": true,
       "timeToFix": 0,
       "day": 1,
-      "dependsOn": ["gap-0-06"]
+      "dependsOn": [
+        "gap-0-06"
+      ]
     },
     {
       "id": "gap-0-09",
@@ -327,7 +421,9 @@
       "fineExposure": true,
       "timeToFix": 0,
       "day": 1,
-      "dependsOn": ["gap-1-01"]
+      "dependsOn": [
+        "gap-1-01"
+      ]
     },
     {
       "id": "gap-1-03",
@@ -387,7 +483,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 1,
-      "dependsOn": ["gap-1-04"]
+      "dependsOn": [
+        "gap-1-04"
+      ]
     },
     {
       "id": "gap-1-06",
@@ -427,7 +525,9 @@
       "fineExposure": false,
       "timeToFix": 0,
       "day": 1,
-      "dependsOn": ["gap-1-06"]
+      "dependsOn": [
+        "gap-1-06"
+      ]
     },
     {
       "id": "gap-1-08",
@@ -447,7 +547,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 1,
-      "dependsOn": ["gap-1-06"]
+      "dependsOn": [
+        "gap-1-06"
+      ]
     },
     {
       "id": "gap-1-09",
@@ -467,7 +569,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 1,
-      "dependsOn": ["gap-1-06"]
+      "dependsOn": [
+        "gap-1-06"
+      ]
     },
     {
       "id": "gap-1-10",
@@ -607,7 +711,9 @@
       "fineExposure": false,
       "timeToFix": 0,
       "day": 1,
-      "dependsOn": ["gap-1-14"]
+      "dependsOn": [
+        "gap-1-14"
+      ]
     },
     {
       "id": "gap-1-17",
@@ -627,7 +733,9 @@
       "fineExposure": false,
       "timeToFix": 0,
       "day": 1,
-      "dependsOn": ["gap-1-14"]
+      "dependsOn": [
+        "gap-1-14"
+      ]
     },
     {
       "id": "gap-2-01",
@@ -667,7 +775,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-01"]
+      "dependsOn": [
+        "gap-2-01"
+      ]
     },
     {
       "id": "gap-2-03",
@@ -687,7 +797,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-01"]
+      "dependsOn": [
+        "gap-2-01"
+      ]
     },
     {
       "id": "gap-2-04",
@@ -707,7 +819,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-01"]
+      "dependsOn": [
+        "gap-2-01"
+      ]
     },
     {
       "id": "gap-2-05",
@@ -747,7 +861,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-05"]
+      "dependsOn": [
+        "gap-2-05"
+      ]
     },
     {
       "id": "gap-2-07",
@@ -767,7 +883,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-05"]
+      "dependsOn": [
+        "gap-2-05"
+      ]
     },
     {
       "id": "gap-2-08",
@@ -787,7 +905,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-05"]
+      "dependsOn": [
+        "gap-2-05"
+      ]
     },
     {
       "id": "gap-2-09",
@@ -807,7 +927,10 @@
       "fineExposure": true,
       "timeToFix": 2,
       "day": 2,
-      "dependsOn": ["gap-2-01", "gap-2-05"]
+      "dependsOn": [
+        "gap-2-01",
+        "gap-2-05"
+      ]
     },
     {
       "id": "gap-2-10",
@@ -827,7 +950,10 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 2,
-      "dependsOn": ["gap-2-09", "gap-2-05"]
+      "dependsOn": [
+        "gap-2-09",
+        "gap-2-05"
+      ]
     },
     {
       "id": "gap-2-11",
@@ -847,7 +973,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 2,
-      "dependsOn": ["gap-2-09"]
+      "dependsOn": [
+        "gap-2-09"
+      ]
     },
     {
       "id": "gap-2-12",
@@ -867,7 +995,9 @@
       "fineExposure": true,
       "timeToFix": 0,
       "day": 2,
-      "dependsOn": ["gap-2-09"]
+      "dependsOn": [
+        "gap-2-09"
+      ]
     },
     {
       "id": "gap-2-13",
@@ -887,7 +1017,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-09"]
+      "dependsOn": [
+        "gap-2-09"
+      ]
     },
     {
       "id": "gap-2-14",
@@ -927,7 +1059,9 @@
       "fineExposure": true,
       "timeToFix": 2,
       "day": 2,
-      "dependsOn": ["gap-2-14"]
+      "dependsOn": [
+        "gap-2-14"
+      ]
     },
     {
       "id": "gap-2-16",
@@ -947,7 +1081,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 2,
-      "dependsOn": ["gap-2-14"]
+      "dependsOn": [
+        "gap-2-14"
+      ]
     },
     {
       "id": "gap-2-17",
@@ -967,7 +1103,9 @@
       "fineExposure": false,
       "timeToFix": 0,
       "day": 2,
-      "dependsOn": ["gap-2-14"]
+      "dependsOn": [
+        "gap-2-14"
+      ]
     },
     {
       "id": "gap-3-01",
@@ -1007,7 +1145,9 @@
       "fineExposure": true,
       "timeToFix": 1,
       "day": 3,
-      "dependsOn": ["gap-3-01"]
+      "dependsOn": [
+        "gap-3-01"
+      ]
     },
     {
       "id": "gap-3-03",
@@ -1027,7 +1167,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 3,
-      "dependsOn": ["gap-3-01"]
+      "dependsOn": [
+        "gap-3-01"
+      ]
     },
     {
       "id": "gap-3-04",
@@ -1047,7 +1189,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 3,
-      "dependsOn": ["gap-3-01"]
+      "dependsOn": [
+        "gap-3-01"
+      ]
     },
     {
       "id": "gap-3-05",
@@ -1087,7 +1231,9 @@
       "fineExposure": true,
       "timeToFix": 2,
       "day": 3,
-      "dependsOn": ["gap-3-05"]
+      "dependsOn": [
+        "gap-3-05"
+      ]
     },
     {
       "id": "gap-3-07",
@@ -1107,7 +1253,9 @@
       "fineExposure": true,
       "timeToFix": 2,
       "day": 3,
-      "dependsOn": ["gap-3-06"]
+      "dependsOn": [
+        "gap-3-06"
+      ]
     },
     {
       "id": "gap-3-08",
@@ -1187,7 +1335,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 3,
-      "dependsOn": ["gap-3-10"]
+      "dependsOn": [
+        "gap-3-10"
+      ]
     },
     {
       "id": "gap-3-12",
@@ -1207,7 +1357,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 3,
-      "dependsOn": ["gap-3-10"]
+      "dependsOn": [
+        "gap-3-10"
+      ]
     },
     {
       "id": "gap-4-01",
@@ -1247,7 +1399,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 3,
-      "dependsOn": ["gap-4-01"]
+      "dependsOn": [
+        "gap-4-01"
+      ]
     },
     {
       "id": "gap-4-03",
@@ -1267,7 +1421,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 3,
-      "dependsOn": ["gap-4-01"]
+      "dependsOn": [
+        "gap-4-01"
+      ]
     },
     {
       "id": "gap-4-04",
@@ -1287,7 +1443,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 3,
-      "dependsOn": ["gap-4-01"]
+      "dependsOn": [
+        "gap-4-01"
+      ]
     },
     {
       "id": "gap-4-05",
@@ -1327,7 +1485,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 3,
-      "dependsOn": ["gap-4-05"]
+      "dependsOn": [
+        "gap-4-05"
+      ]
     },
     {
       "id": "gap-4-07",
@@ -1347,7 +1507,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 3,
-      "dependsOn": ["gap-4-05"]
+      "dependsOn": [
+        "gap-4-05"
+      ]
     },
     {
       "id": "gap-5-01",
@@ -1387,7 +1549,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 4,
-      "dependsOn": ["gap-5-01"]
+      "dependsOn": [
+        "gap-5-01"
+      ]
     },
     {
       "id": "gap-5-03",
@@ -1407,7 +1571,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 4,
-      "dependsOn": ["gap-5-01"]
+      "dependsOn": [
+        "gap-5-01"
+      ]
     },
     {
       "id": "gap-5-04",
@@ -1427,7 +1593,9 @@
       "fineExposure": false,
       "timeToFix": 3,
       "day": 4,
-      "dependsOn": ["gap-5-03"]
+      "dependsOn": [
+        "gap-5-03"
+      ]
     },
     {
       "id": "gap-5-05",
@@ -1447,7 +1615,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 4,
-      "dependsOn": ["gap-5-01"]
+      "dependsOn": [
+        "gap-5-01"
+      ]
     },
     {
       "id": "gap-5-06",
@@ -1490,206 +1660,6 @@
       "dependsOn": []
     },
     {
-      "id": "gap-6-01",
-      "domain": 6,
-      "text": {
-        "en": "Do you have a policy for secure acquisition of IT systems and services?",
-        "de": "Haben Sie eine Richtlinie für die sichere Beschaffung von IT-Systemen und -Diensten?"
-      },
-      "plainText": {
-        "en": "When you buy new software or hardware, do you check if it's secure? Or do you just pick the cheapest option?",
-        "de": "Wenn Sie neue Software oder Hardware kaufen, prüfen Sie, ob sie sicher ist? Oder wählen Sie einfach die günstigste Option?"
-      },
-      "legalBasis": "Art 21(2)(e)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 1,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-6-02",
-      "domain": 6,
-      "text": {
-        "en": "If you develop software, do you follow secure development practices?",
-        "de": "Wenn Sie Software entwickeln, befolgen Sie sichere Entwicklungspraktiken?"
-      },
-      "plainText": {
-        "en": "If your company builds software (even internal tools), is security part of the development process?",
-        "de": "Wenn Ihr Unternehmen Software entwickelt (auch interne Tools), ist Sicherheit Teil des Entwicklungsprozesses?"
-      },
-      "legalBasis": "Art 21(2)(e)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-6-03",
-      "domain": 6,
-      "text": {
-        "en": "Do you have a vulnerability management and patch management process?",
-        "de": "Haben Sie einen Prozess für Schwachstellen- und Patch-Management?"
-      },
-      "plainText": {
-        "en": "When security updates come out for your software, do you apply them? Is there a process for it?",
-        "de": "Wenn Sicherheitsupdates für Ihre Software erscheinen, installieren Sie diese? Gibt es dafür einen Prozess?"
-      },
-      "legalBasis": "Art 21(2)(e)",
-      "criticality": 2,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-6-04",
-      "domain": 6,
-      "text": {
-        "en": "Are critical security patches applied within a defined timeframe?",
-        "de": "Werden kritische Sicherheitspatches innerhalb eines definierten Zeitrahmens eingespielt?"
-      },
-      "plainText": {
-        "en": "How quickly do you install urgent security updates? Days? Weeks? Never?",
-        "de": "Wie schnell installieren Sie dringende Sicherheitsupdates? Tage? Wochen? Nie?"
-      },
-      "legalBasis": "Art 21(2)(e)",
-      "criticality": 2,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": ["gap-6-03"]
-    },
-    {
-      "id": "gap-6-05",
-      "domain": 6,
-      "text": {
-        "en": "Do you perform security testing before deploying new systems or changes?",
-        "de": "Führen Sie Sicherheitstests durch, bevor Sie neue Systeme oder Änderungen in Betrieb nehmen?"
-      },
-      "plainText": {
-        "en": "Before putting a new system live, do you check if it's secure?",
-        "de": "Bevor Sie ein neues System in Betrieb nehmen, prüfen Sie, ob es sicher ist?"
-      },
-      "legalBasis": "Art 21(2)(e)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-7-01",
-      "domain": 7,
-      "text": {
-        "en": "Do you have any way to measure whether your security measures are working?",
-        "de": "Haben Sie eine Möglichkeit zu messen, ob Ihre Sicherheitsmaßnahmen funktionieren?"
-      },
-      "plainText": {
-        "en": "Can you answer the question: \"are we more secure this year than last year?\" with evidence?",
-        "de": "Können Sie die Frage beantworten: \"Sind wir dieses Jahr sicherer als letztes Jahr?\" -- mit Belegen?"
-      },
-      "legalBasis": "Art 21(2)(f)",
-      "criticality": 2,
-      "respondent": 1,
-      "consequence": 2,
-      "fineExposure": true,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-7-02",
-      "domain": 7,
-      "text": {
-        "en": "Do you conduct regular internal reviews of your security measures?",
-        "de": "Führen Sie regelmäßige interne Überprüfungen Ihrer Sicherheitsmaßnahmen durch?"
-      },
-      "plainText": {
-        "en": "Does someone periodically check if the security rules are actually being followed?",
-        "de": "Prüft jemand regelmäßig, ob die Sicherheitsregeln tatsächlich eingehalten werden?"
-      },
-      "legalBasis": "Art 21(2)(f)",
-      "criticality": 2,
-      "respondent": 1,
-      "consequence": 0,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-7-03",
-      "domain": 7,
-      "text": {
-        "en": "Are the results of effectiveness assessments reported to management?",
-        "de": "Werden die Ergebnisse von Wirksamkeitsbewertungen der Geschäftsleitung berichtet?"
-      },
-      "plainText": {
-        "en": "Does the CEO see the results of security reviews?",
-        "de": "Sieht der CEO die Ergebnisse der Sicherheitsüberprüfungen?"
-      },
-      "legalBasis": "Art 20(1)",
-      "criticality": 2,
-      "respondent": 0,
-      "consequence": 0,
-      "fineExposure": false,
-      "timeToFix": 1,
-      "day": 5,
-      "dependsOn": ["gap-7-01"]
-    },
-    {
-      "id": "gap-7-04",
-      "domain": 7,
-      "text": {
-        "en": "Do you have a corrective action process for identified deficiencies?",
-        "de": "Haben Sie einen Korrekturmaßnahmenprozess für festgestellte Mängel?"
-      },
-      "plainText": {
-        "en": "When you find a security problem, is there a process to track it until it's fixed?",
-        "de": "Wenn Sie ein Sicherheitsproblem finden, gibt es einen Prozess, um es bis zur Behebung zu verfolgen?"
-      },
-      "legalBasis": "Art 21(2)(f)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-7-05",
-      "domain": 7,
-      "text": {
-        "en": "Have you considered external penetration testing or vulnerability assessments?",
-        "de": "Haben Sie externe Penetrationstests oder Schwachstellenbewertungen in Betracht gezogen?"
-      },
-      "plainText": {
-        "en": "Has anyone tried to break into your systems on purpose to see if they could?",
-        "de": "Hat jemand absichtlich versucht, in Ihre Systeme einzudringen, um zu sehen, ob es möglich ist?"
-      },
-      "legalBasis": "Art 21(2)(f)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 0,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
       "id": "gap-8-01",
       "domain": 8,
       "text": {
@@ -1727,7 +1697,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 4,
-      "dependsOn": ["gap-8-01"]
+      "dependsOn": [
+        "gap-8-01"
+      ]
     },
     {
       "id": "gap-8-03",
@@ -1767,7 +1739,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 4,
-      "dependsOn": ["gap-8-01"]
+      "dependsOn": [
+        "gap-8-01"
+      ]
     },
     {
       "id": "gap-8-05",
@@ -1810,86 +1784,6 @@
       "dependsOn": []
     },
     {
-      "id": "gap-9-01",
-      "domain": 9,
-      "text": {
-        "en": "Do you have a documented cryptography policy?",
-        "de": "Haben Sie eine dokumentierte Kryptografierichtlinie?"
-      },
-      "plainText": {
-        "en": "Is there a written policy about how your company uses encryption? (Even a short one counts.)",
-        "de": "Gibt es eine schriftliche Richtlinie darüber, wie Ihr Unternehmen Verschlüsselung einsetzt? (Auch eine kurze zählt.)"
-      },
-      "legalBasis": "Art 21(2)(h)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 1,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-9-02",
-      "domain": 9,
-      "text": {
-        "en": "Is data encrypted in transit (HTTPS for all web services, TLS for email)?",
-        "de": "Werden Daten bei der Übertragung verschlüsselt (HTTPS für alle Webdienste, TLS für E-Mail)?"
-      },
-      "plainText": {
-        "en": "When data travels between systems (website, email, file transfers), is it encrypted? Check: does your website show a padlock?",
-        "de": "Wenn Daten zwischen Systemen übertragen werden (Website, E-Mail, Dateitransfers), sind sie verschlüsselt? Prüfen Sie: Zeigt Ihre Website ein Schloss-Symbol?"
-      },
-      "legalBasis": "Art 21(2)(h)",
-      "criticality": 2,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 1,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-9-03",
-      "domain": 9,
-      "text": {
-        "en": "Is data encrypted at rest where appropriate (disk encryption, database encryption)?",
-        "de": "Werden Daten im Ruhezustand wo angemessen verschlüsselt (Festplattenverschlüsselung, Datenbankverschlüsselung)?"
-      },
-      "plainText": {
-        "en": "Are your laptops encrypted? (Windows BitLocker, Mac FileVault?) What about server hard drives?",
-        "de": "Sind Ihre Laptops verschlüsselt? (Windows BitLocker, Mac FileVault?) Was ist mit den Festplatten der Server?"
-      },
-      "legalBasis": "Art 21(2)(h)",
-      "criticality": 2,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-9-04",
-      "domain": 9,
-      "text": {
-        "en": "Do you have a process for managing encryption keys?",
-        "de": "Haben Sie einen Prozess für das Management von Verschlüsselungsschlüsseln?"
-      },
-      "plainText": {
-        "en": "If you use encryption, who has the keys? What happens if that person leaves?",
-        "de": "Wenn Sie Verschlüsselung nutzen, wer hat die Schlüssel? Was passiert, wenn diese Person das Unternehmen verlässt?"
-      },
-      "legalBasis": "Art 21(2)(h)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 1,
-      "day": 5,
-      "dependsOn": []
-    },
-    {
       "id": "gap-10-01",
       "domain": 10,
       "text": {
@@ -1927,7 +1821,9 @@
       "fineExposure": false,
       "timeToFix": 2,
       "day": 4,
-      "dependsOn": ["gap-10-01"]
+      "dependsOn": [
+        "gap-10-01"
+      ]
     },
     {
       "id": "gap-10-03",
@@ -1947,7 +1843,9 @@
       "fineExposure": false,
       "timeToFix": 1,
       "day": 4,
-      "dependsOn": ["gap-10-01"]
+      "dependsOn": [
+        "gap-10-01"
+      ]
     },
     {
       "id": "gap-10-04",
@@ -2090,6 +1988,350 @@
       "dependsOn": []
     },
     {
+      "id": "gap-13-01",
+      "domain": 13,
+      "text": {
+        "en": "Is access to server rooms, network equipment, and critical IT infrastructure physically restricted?",
+        "de": "Ist der Zugang zu Serverräumen, Netzwerkausrüstung und kritischer IT-Infrastruktur physisch eingeschränkt?"
+      },
+      "plainText": {
+        "en": "Is your server room locked? Can random employees or visitors walk in?",
+        "de": "Ist Ihr Serverraum abgeschlossen? Können beliebige Mitarbeiter oder Besucher einfach hineingehen?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-13-02",
+      "domain": 13,
+      "text": {
+        "en": "Are physical access controls in place for the office (keycards, visitor logs)?",
+        "de": "Gibt es physische Zugangskontrollen für das Büro (Schlüsselkarten, Besucherprotokolle)?"
+      },
+      "plainText": {
+        "en": "Do you control who enters the building? Do visitors sign in?",
+        "de": "Kontrollieren Sie, wer das Gebäude betritt? Melden sich Besucher an?"
+      },
+      "legalBasis": "Art 21(2)(i)",
+      "criticality": 1,
+      "respondent": 4,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-13-03",
+      "domain": 13,
+      "text": {
+        "en": "Are critical IT systems protected against environmental risks (fire, water, power failure)?",
+        "de": "Sind kritische IT-Systeme gegen Umweltrisiken geschützt (Feuer, Wasser, Stromausfall)?"
+      },
+      "plainText": {
+        "en": "Do you have fire suppression, UPS (battery backup), and protection against flooding in your server room?",
+        "de": "Haben Sie Brandschutz, USV (Batteriepufferung) und Schutz gegen Überflutung in Ihrem Serverraum?"
+      },
+      "legalBasis": "Art 21(2)(c)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 4,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-01",
+      "domain": 6,
+      "text": {
+        "en": "Do you have a policy for secure acquisition of IT systems and services?",
+        "de": "Haben Sie eine Richtlinie für die sichere Beschaffung von IT-Systemen und -Diensten?"
+      },
+      "plainText": {
+        "en": "When you buy new software or hardware, do you check if it's secure? Or do you just pick the cheapest option?",
+        "de": "Wenn Sie neue Software oder Hardware kaufen, prüfen Sie, ob sie sicher ist? Oder wählen Sie einfach die günstigste Option?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-02",
+      "domain": 6,
+      "text": {
+        "en": "If you develop software, do you follow secure development practices?",
+        "de": "Wenn Sie Software entwickeln, befolgen Sie sichere Entwicklungspraktiken?"
+      },
+      "plainText": {
+        "en": "If your company builds software (even internal tools), is security part of the development process?",
+        "de": "Wenn Ihr Unternehmen Software entwickelt (auch interne Tools), ist Sicherheit Teil des Entwicklungsprozesses?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-03",
+      "domain": 6,
+      "text": {
+        "en": "Do you have a vulnerability management and patch management process?",
+        "de": "Haben Sie einen Prozess für Schwachstellen- und Patch-Management?"
+      },
+      "plainText": {
+        "en": "When security updates come out for your software, do you apply them? Is there a process for it?",
+        "de": "Wenn Sicherheitsupdates für Ihre Software erscheinen, installieren Sie diese? Gibt es dafür einen Prozess?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-6-04",
+      "domain": 6,
+      "text": {
+        "en": "Are critical security patches applied within a defined timeframe?",
+        "de": "Werden kritische Sicherheitspatches innerhalb eines definierten Zeitrahmens eingespielt?"
+      },
+      "plainText": {
+        "en": "How quickly do you install urgent security updates? Days? Weeks? Never?",
+        "de": "Wie schnell installieren Sie dringende Sicherheitsupdates? Tage? Wochen? Nie?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": [
+        "gap-6-03"
+      ]
+    },
+    {
+      "id": "gap-6-05",
+      "domain": 6,
+      "text": {
+        "en": "Do you perform security testing before deploying new systems or changes?",
+        "de": "Führen Sie Sicherheitstests durch, bevor Sie neue Systeme oder Änderungen in Betrieb nehmen?"
+      },
+      "plainText": {
+        "en": "Before putting a new system live, do you check if it's secure?",
+        "de": "Bevor Sie ein neues System in Betrieb nehmen, prüfen Sie, ob es sicher ist?"
+      },
+      "legalBasis": "Art 21(2)(e)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-01",
+      "domain": 7,
+      "text": {
+        "en": "Do you have any way to measure whether your security measures are working?",
+        "de": "Haben Sie eine Möglichkeit zu messen, ob Ihre Sicherheitsmaßnahmen funktionieren?"
+      },
+      "plainText": {
+        "en": "Can you answer the question: \"are we more secure this year than last year?\" with evidence?",
+        "de": "Können Sie die Frage beantworten: \"Sind wir dieses Jahr sicherer als letztes Jahr?\" -- mit Belegen?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 2,
+      "fineExposure": true,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-02",
+      "domain": 7,
+      "text": {
+        "en": "Do you conduct regular internal reviews of your security measures?",
+        "de": "Führen Sie regelmäßige interne Überprüfungen Ihrer Sicherheitsmaßnahmen durch?"
+      },
+      "plainText": {
+        "en": "Does someone periodically check if the security rules are actually being followed?",
+        "de": "Prüft jemand regelmäßig, ob die Sicherheitsregeln tatsächlich eingehalten werden?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-03",
+      "domain": 7,
+      "text": {
+        "en": "Are the results of effectiveness assessments reported to management?",
+        "de": "Werden die Ergebnisse von Wirksamkeitsbewertungen der Geschäftsleitung berichtet?"
+      },
+      "plainText": {
+        "en": "Does the CEO see the results of security reviews?",
+        "de": "Sieht der CEO die Ergebnisse der Sicherheitsüberprüfungen?"
+      },
+      "legalBasis": "Art 20(1)",
+      "criticality": 2,
+      "respondent": 0,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": [
+        "gap-7-01"
+      ]
+    },
+    {
+      "id": "gap-7-04",
+      "domain": 7,
+      "text": {
+        "en": "Do you have a corrective action process for identified deficiencies?",
+        "de": "Haben Sie einen Korrekturmaßnahmenprozess für festgestellte Mängel?"
+      },
+      "plainText": {
+        "en": "When you find a security problem, is there a process to track it until it's fixed?",
+        "de": "Wenn Sie ein Sicherheitsproblem finden, gibt es einen Prozess, um es bis zur Behebung zu verfolgen?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-7-05",
+      "domain": 7,
+      "text": {
+        "en": "Have you considered external penetration testing or vulnerability assessments?",
+        "de": "Haben Sie externe Penetrationstests oder Schwachstellenbewertungen in Betracht gezogen?"
+      },
+      "plainText": {
+        "en": "Has anyone tried to break into your systems on purpose to see if they could?",
+        "de": "Hat jemand absichtlich versucht, in Ihre Systeme einzudringen, um zu sehen, ob es möglich ist?"
+      },
+      "legalBasis": "Art 21(2)(f)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 0,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-01",
+      "domain": 9,
+      "text": {
+        "en": "Do you have a documented cryptography policy?",
+        "de": "Haben Sie eine dokumentierte Kryptografierichtlinie?"
+      },
+      "plainText": {
+        "en": "Is there a written policy about how your company uses encryption? (Even a short one counts.)",
+        "de": "Gibt es eine schriftliche Richtlinie darüber, wie Ihr Unternehmen Verschlüsselung einsetzt? (Auch eine kurze zählt.)"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-02",
+      "domain": 9,
+      "text": {
+        "en": "Is data encrypted in transit (HTTPS for all web services, TLS for email)?",
+        "de": "Werden Daten bei der Übertragung verschlüsselt (HTTPS für alle Webdienste, TLS für E-Mail)?"
+      },
+      "plainText": {
+        "en": "When data travels between systems (website, email, file transfers), is it encrypted? Check: does your website show a padlock?",
+        "de": "Wenn Daten zwischen Systemen übertragen werden (Website, E-Mail, Dateitransfers), sind sie verschlüsselt? Prüfen Sie: Zeigt Ihre Website ein Schloss-Symbol?"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-03",
+      "domain": 9,
+      "text": {
+        "en": "Is data encrypted at rest where appropriate (disk encryption, database encryption)?",
+        "de": "Werden Daten im Ruhezustand wo angemessen verschlüsselt (Festplattenverschlüsselung, Datenbankverschlüsselung)?"
+      },
+      "plainText": {
+        "en": "Are your laptops encrypted? (Windows BitLocker, Mac FileVault?) What about server hard drives?",
+        "de": "Sind Ihre Laptops verschlüsselt? (Windows BitLocker, Mac FileVault?) Was ist mit den Festplatten der Server?"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 2,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 2,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
+      "id": "gap-9-04",
+      "domain": 9,
+      "text": {
+        "en": "Do you have a process for managing encryption keys?",
+        "de": "Haben Sie einen Prozess für das Management von Verschlüsselungsschlüsseln?"
+      },
+      "plainText": {
+        "en": "If you use encryption, who has the keys? What happens if that person leaves?",
+        "de": "Wenn Sie Verschlüsselung nutzen, wer hat die Schlüssel? Was passiert, wenn diese Person das Unternehmen verlässt?"
+      },
+      "legalBasis": "Art 21(2)(h)",
+      "criticality": 1,
+      "respondent": 1,
+      "consequence": 1,
+      "fineExposure": false,
+      "timeToFix": 1,
+      "day": 5,
+      "dependsOn": []
+    },
+    {
       "id": "gap-11-01",
       "domain": 11,
       "text": {
@@ -2227,66 +2469,6 @@
       "fineExposure": false,
       "timeToFix": 3,
       "day": 5,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-13-01",
-      "domain": 13,
-      "text": {
-        "en": "Is access to server rooms, network equipment, and critical IT infrastructure physically restricted?",
-        "de": "Ist der Zugang zu Serverräumen, Netzwerkausrüstung und kritischer IT-Infrastruktur physisch eingeschränkt?"
-      },
-      "plainText": {
-        "en": "Is your server room locked? Can random employees or visitors walk in?",
-        "de": "Ist Ihr Serverraum abgeschlossen? Können beliebige Mitarbeiter oder Besucher einfach hineingehen?"
-      },
-      "legalBasis": "Art 21(2)(i)",
-      "criticality": 2,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 1,
-      "day": 4,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-13-02",
-      "domain": 13,
-      "text": {
-        "en": "Are physical access controls in place for the office (keycards, visitor logs)?",
-        "de": "Gibt es physische Zugangskontrollen für das Büro (Schlüsselkarten, Besucherprotokolle)?"
-      },
-      "plainText": {
-        "en": "Do you control who enters the building? Do visitors sign in?",
-        "de": "Kontrollieren Sie, wer das Gebäude betritt? Melden sich Besucher an?"
-      },
-      "legalBasis": "Art 21(2)(i)",
-      "criticality": 1,
-      "respondent": 4,
-      "consequence": 0,
-      "fineExposure": false,
-      "timeToFix": 1,
-      "day": 4,
-      "dependsOn": []
-    },
-    {
-      "id": "gap-13-03",
-      "domain": 13,
-      "text": {
-        "en": "Are critical IT systems protected against environmental risks (fire, water, power failure)?",
-        "de": "Sind kritische IT-Systeme gegen Umweltrisiken geschützt (Feuer, Wasser, Stromausfall)?"
-      },
-      "plainText": {
-        "en": "Do you have fire suppression, UPS (battery backup), and protection against flooding in your server room?",
-        "de": "Haben Sie Brandschutz, USV (Batteriepufferung) und Schutz gegen Überflutung in Ihrem Serverraum?"
-      },
-      "legalBasis": "Art 21(2)(c)",
-      "criticality": 1,
-      "respondent": 1,
-      "consequence": 1,
-      "fineExposure": false,
-      "timeToFix": 2,
-      "day": 4,
       "dependsOn": []
     },
     {

@@ -6,18 +6,47 @@
 
 Maintained by [Kardashev Catalyst UG](https://nisd2.eu) — operator of [nisd2.eu](https://nisd2.eu) — and the same schema that powers [nisd2.eu/nis2-gap-assessment](https://nisd2.eu/nis2-gap-assessment).
 
-The Zod schema is the source of truth. The bundled JSON snapshot is a derived, schema-validated artefact.
+Source of truth lives in [`src/domains.ts`](./src/domains.ts) and [`src/questions/day-<n>.ts`](./src/questions/) — typed, with full TypeScript autocomplete on enums and IDs. The bundled JSON at [`data/gap-assessment.json`](./data/gap-assessment.json) is generated from these files for non-TS consumers.
 
 ---
 
 ## Why a schema, not just a JSON file
 
-A JSON-only release is a dead artefact: nobody can validate it without re-deriving the rules, and forks drift silently. A Zod schema is alive:
+A JSON-only release is a dead artefact: nobody can validate it without re-deriving the rules, and forks drift silently. The TypeScript source files + Zod schema are alive:
 
-- **TypeScript consumers** import the schema directly and get full type safety.
-- **Non-TS consumers** generate JSON Schema via [`zod-to-json-schema`](https://github.com/StefanTerdell/zod-to-json-schema) and use it from Python, Go, Rust, regulators' Excel rigs, anywhere.
+- **TypeScript consumers** import the data directly and get full type safety, autocomplete on enums (`CRITICALITY.HIGH`, `RESPONDENT.CEO`, etc.), and inline IDE hints.
+- **Non-TS consumers** read the bundled `data/gap-assessment.json` directly, or generate JSON Schema via [`zod-to-json-schema`](https://github.com/StefanTerdell/zod-to-json-schema) and use it from Python, Go, Rust, regulators' Excel rigs, anywhere.
 - **Drizzle / Prisma / Kysely consumers** see `examples/drizzle-storage-reference.ts` for a suggested response-storage layer keyed to our question IDs.
-- **Forks stay honest** — every change to the question set must validate against the schema or CI fails.
+- **Forks stay honest** — the JSON is regenerated from TS via `bun run build:json`; CI fails if it drifts.
+
+### Source layout
+
+```
+src/
+  schema.ts                Zod schema, enums (CRITICALITY, RESPONDENT, etc.)
+  domains.ts               15 domains
+  questions/
+    day-1.ts               26 questions  (Scoping & Governance)
+    day-2.ts               17 questions  (Risk Management)
+    day-3.ts               19 questions  (Incident Handling & BCP)
+    day-4.ts               26 questions  (Supply Chain, Training, Access, Physical)
+    day-5.ts               28 questions  (Dev/Procurement, Effectiveness, Crypto, Comms, Network, Evidence)
+    index.ts               combines into allQuestions
+  data.ts                  wraps domains + allQuestions, validates against schema
+  scoring.ts               reference scoring logic
+data/
+  gap-assessment.json      GENERATED — do not edit by hand
+scripts/
+  build-json.ts            regenerates the JSON from TS source
+```
+
+### Editing questions
+
+1. Edit the relevant `src/questions/day-<n>.ts` file (TypeScript, autocomplete works on enums).
+2. Run `bun run build:json` to regenerate `data/gap-assessment.json`.
+3. Run `bun run validate` and `bun run typecheck` to confirm everything is consistent.
+
+CI runs `bun run check:json-in-sync` and fails if the bundled JSON doesn't match what the TS would generate.
 
 ---
 
@@ -32,7 +61,7 @@ bun add @nisd2/nis2-gap-assessment
 Or pin to a specific commit / tag without npm:
 
 ```bash
-npm install github:NISD2/nis2-gap-assessment#v1.0.0
+npm install github:NISD2/nis2-gap-assessment#v1.1.0
 ```
 
 ---
