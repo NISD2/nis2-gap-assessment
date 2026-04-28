@@ -1,25 +1,24 @@
 import { describe, expect, test } from "bun:test";
 import { gapAssessment } from "../src/data";
-import {
-  CRITICALITY,
-  RESPONDENT,
-  CONSEQUENCE,
-  TIME_TO_FIX,
-  ANSWER,
-  MATURITY_LEVELS,
-} from "../src/schema";
+import { ANSWER, MATURITY_LEVELS } from "../src/schema";
 import { computeScores } from "../src/scoring";
 
-describe("schema parses", () => {
-  test("loads with no errors", () => {
+// These tests guard invariants that the Zod schema cannot express:
+// uniqueness, cross-references, semantic content, scoring behaviour.
+// Anything Zod already enforces (enum membership, min-length on locales)
+// is intentionally not covered here — the parse in src/data.ts would
+// fail first.
+
+describe("data loads", () => {
+  test("schema parses; shape is non-empty and 15 domains", () => {
     expect(gapAssessment.questions.length).toBeGreaterThan(0);
     expect(gapAssessment.domains.length).toBe(15);
     expect(gapAssessment.version).toMatch(/^\d+\.\d+\.\d+$/);
   });
 });
 
-describe("domain integrity", () => {
-  test("domain IDs are 0..14, contiguous, unique", () => {
+describe("uniqueness", () => {
+  test("domain IDs are 0..14, contiguous", () => {
     const ids = gapAssessment.domains.map((d) => d.id).sort((a, b) => a - b);
     expect(ids).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]);
   });
@@ -29,35 +28,21 @@ describe("domain integrity", () => {
     expect(new Set(codes).size).toBe(codes.length);
   });
 
-  test("every domain has a day in 1..5", () => {
-    for (const domain of gapAssessment.domains) {
-      expect([1, 2, 3, 4, 5]).toContain(domain.day);
-    }
+  test("question IDs are unique", () => {
+    const ids = gapAssessment.questions.map((q) => q.id);
+    expect(new Set(ids).size).toBe(ids.length);
   });
+});
 
+describe("cross-references", () => {
   test("every domain has at least one question", () => {
     const domainIds = new Set(gapAssessment.questions.map((q) => q.domain));
     for (const domain of gapAssessment.domains) {
       expect(domainIds.has(domain.id)).toBe(true);
     }
   });
-});
 
-describe("question IDs", () => {
-  test("are unique", () => {
-    const ids = gapAssessment.questions.map((q) => q.id);
-    expect(new Set(ids).size).toBe(ids.length);
-  });
-
-  test("are non-empty strings", () => {
-    for (const question of gapAssessment.questions) {
-      expect(question.id.trim().length).toBeGreaterThan(0);
-    }
-  });
-});
-
-describe("question references", () => {
-  test("every question.domain exists in domains", () => {
+  test("every question.domain resolves to an existing domain", () => {
     const domainIds = new Set(gapAssessment.domains.map((d) => d.id));
     for (const question of gapAssessment.questions) {
       expect(domainIds.has(question.domain)).toBe(true);
@@ -85,62 +70,29 @@ describe("question references", () => {
       expect(question.dependsOn).not.toContain(question.id);
     }
   });
-});
 
-describe("enum values", () => {
-  test("every criticality is a known CRITICALITY value", () => {
-    const valid = new Set<number>(Object.values(CRITICALITY));
-    for (const question of gapAssessment.questions) {
-      expect(valid.has(question.criticality)).toBe(true);
+  test("dependsOn graph has no cycles", () => {
+    const graph = new Map<string, readonly string[]>(
+      gapAssessment.questions.map((q) => [q.id, q.dependsOn]),
+    );
+    const visiting = new Set<string>();
+    const visited = new Set<string>();
+
+    function visit(id: string, path: string[]): void {
+      if (visited.has(id)) return;
+      if (visiting.has(id)) {
+        throw new Error(`dependsOn cycle: ${[...path, id].join(" -> ")}`);
+      }
+      visiting.add(id);
+      for (const dep of graph.get(id) ?? []) {
+        visit(dep, [...path, id]);
+      }
+      visiting.delete(id);
+      visited.add(id);
     }
-  });
 
-  test("every respondent is a known RESPONDENT value", () => {
-    const valid = new Set<number>(Object.values(RESPONDENT));
-    for (const question of gapAssessment.questions) {
-      expect(valid.has(question.respondent)).toBe(true);
-    }
-  });
-
-  test("every consequence is a known CONSEQUENCE value", () => {
-    const valid = new Set<number>(Object.values(CONSEQUENCE));
-    for (const question of gapAssessment.questions) {
-      expect(valid.has(question.consequence)).toBe(true);
-    }
-  });
-
-  test("every timeToFix is a known TIME_TO_FIX value", () => {
-    const valid = new Set<number>(Object.values(TIME_TO_FIX));
-    for (const question of gapAssessment.questions) {
-      expect(valid.has(question.timeToFix)).toBe(true);
-    }
-  });
-});
-
-describe("legalBasis", () => {
-  test("every question cites a primary source", () => {
-    for (const question of gapAssessment.questions) {
-      expect(question.legalBasis.trim().length).toBeGreaterThan(0);
-    }
-  });
-});
-
-describe("localised strings", () => {
-  test("every text and plainText has en + de", () => {
-    for (const question of gapAssessment.questions) {
-      expect(question.text.en.trim().length).toBeGreaterThan(0);
-      expect(question.text.de.trim().length).toBeGreaterThan(0);
-      expect(question.plainText.en.trim().length).toBeGreaterThan(0);
-      expect(question.plainText.de.trim().length).toBeGreaterThan(0);
-    }
-  });
-
-  test("every domain name and description has en + de", () => {
-    for (const domain of gapAssessment.domains) {
-      expect(domain.name.en.trim().length).toBeGreaterThan(0);
-      expect(domain.name.de.trim().length).toBeGreaterThan(0);
-      expect(domain.description.en.trim().length).toBeGreaterThan(0);
-      expect(domain.description.de.trim().length).toBeGreaterThan(0);
+    for (const id of graph.keys()) {
+      expect(() => visit(id, [])).not.toThrow();
     }
   });
 });

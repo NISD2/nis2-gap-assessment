@@ -4,6 +4,12 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-04-28
+
+### Changed
+- README rewritten to lead with what the artefact is (an open data format), not how to use it.
+- Test suite trimmed from 22 to 13: removed checks that duplicate Zod's own validation; kept cross-references, semantic invariants, and scoring sanity; added a `dependsOn` cycle-detection test.
+
 ## [1.2.0] — 2026-04-28
 
 ### Added
