@@ -11,7 +11,7 @@ import { allQuestions } from "./questions";
  * Bump these constants when shipping a release; CI will fail if the
  * generated JSON falls out of sync.
  */
-export const VERSION = "1.3.2";
+export const VERSION = "2.0.0";
 export const LAST_UPDATED = "2026-04-28";
 
 export const gapAssessment: GapAssessmentData = gapAssessmentDataSchema.parse({
