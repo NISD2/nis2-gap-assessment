@@ -4,6 +4,21 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [1.3.2] — 2026-04-28
+
+### Changed
+- `CONSEQUENCE_MULTIPLIER` typed as `Record<ConsequenceValue, number>` instead of `Record<number, number>` — exhaustive by construction, no runtime fallback needed.
+- `examples/drizzle-storage-reference.ts` is now typechecked in CI via `tsconfig.examples.json` so it cannot rot. Added `drizzle-orm` as a dev dependency.
+- README install command updated to v1.3.1 (was stale at v1.3.0).
+
+### Fixed
+- (none — tightening only)
+
+## [1.3.1] — 2026-04-28
+
+### Added
+- `prepare: tsc` script so consumers installing from GitHub get a usable `dist/` build automatically.
+
 ## [1.3.0] — 2026-04-28
 
 ### Changed

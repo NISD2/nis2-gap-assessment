@@ -1,6 +1,8 @@
 import {
   ANSWER,
+  CONSEQUENCE,
   MATURITY_LEVELS,
+  type ConsequenceValue,
   type GapQuestion,
   type AnswerMap,
   type DomainScore,
@@ -16,11 +18,11 @@ function getMaturityLevel(percentage: number): MaturityKey {
   return "critical";
 }
 
-const CONSEQUENCE_MULTIPLIER: Record<number, number> = {
-  0: 1,
-  1: 1.5,
-  2: 2,
-  3: 3,
+const CONSEQUENCE_MULTIPLIER: Record<ConsequenceValue, number> = {
+  [CONSEQUENCE.AUDIT_FINDING]: 1,
+  [CONSEQUENCE.OPERATIONAL_RISK]: 1.5,
+  [CONSEQUENCE.FINE]: 2,
+  [CONSEQUENCE.PERSONAL_LIABILITY]: 3,
 };
 
 export function computeDomainScores(
@@ -63,7 +65,7 @@ export function computeGaps(
     .map((q) => {
       const answer = answers[q.id] ?? ANSWER.NO;
       const gapScore =
-        (2 - answer) * q.criticality * (CONSEQUENCE_MULTIPLIER[q.consequence] ?? 1);
+        (2 - answer) * q.criticality * CONSEQUENCE_MULTIPLIER[q.consequence];
 
       return {
         questionId: q.id,
