@@ -4,6 +4,14 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [2.0.1] — 2026-04-28
+
+### Changed
+- **`dist/` is now committed to git.** Consumers no longer depend on the `prepare: tsc` lifecycle script running at install time, which was unreliable in some CI environments (notably Vercel) and caused `import { gapAssessment } from "@nisd2/nis2-gap-assessment-schema"` to fail with `unknown` type resolution. The `prepare` script remains as a defence-in-depth — `dist/` will be rebuilt if a consumer or maintainer regenerates it locally.
+
+### Reverted
+- The literal-union schema refactor (briefly shipped in v2.0.0) is reverted. `z.nativeEnum(...)` is the right tool for `criticality` / `respondent` / `consequence` / `timeToFix` / `answer` — duplicating the enum values across a const + a literal union violated DRY. The original cause of the consumer-side `unknown` issue was the missing `dist/`, not `z.nativeEnum`'s `.d.ts` emit.
+
 ## [2.0.0] — 2026-04-28
 
 ### Changed (BREAKING)
