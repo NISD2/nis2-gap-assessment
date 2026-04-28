@@ -56,19 +56,8 @@ const localisedString = z.object({
   de: z.string().min(1),
 });
 
-// Schemas use explicit literal unions instead of z.nativeEnum so the
-// inferred types survive .d.ts emission deterministically. Some
-// downstream typecheckers (Turbopack in particular) struggle to follow
-// z.nativeEnum's inferred narrow union through compiled type
-// declarations, leaving consumer-side properties typed as `unknown`.
-
 const dayEnum = z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]);
 const domainIdEnum = z.number().int().min(0).max(14);
-const criticalityEnum = z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]);
-const respondentEnum = z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]);
-const consequenceEnum = z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]);
-const timeToFixEnum = z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]);
-const answerEnum = z.union([z.literal(-1), z.literal(0), z.literal(1), z.literal(2)]);
 
 export const gapDomainSchema = z.object({
   id: domainIdEnum,
@@ -84,11 +73,11 @@ export const gapQuestionSchema = z.object({
   text: localisedString,
   plainText: localisedString,
   legalBasis: z.string().min(1),
-  criticality: criticalityEnum,
-  respondent: respondentEnum,
-  consequence: consequenceEnum,
+  criticality: z.nativeEnum(CRITICALITY),
+  respondent: z.nativeEnum(RESPONDENT),
+  consequence: z.nativeEnum(CONSEQUENCE),
   fineExposure: z.boolean(),
-  timeToFix: timeToFixEnum,
+  timeToFix: z.nativeEnum(TIME_TO_FIX),
   day: dayEnum,
   dependsOn: z.array(z.string()),
 });
@@ -100,7 +89,7 @@ export const gapAssessmentDataSchema = z.object({
   questions: z.array(gapQuestionSchema).min(1),
 });
 
-export const answerMapSchema = z.record(z.string(), answerEnum);
+export const answerMapSchema = z.record(z.string(), z.nativeEnum(ANSWER));
 
 export type GapDomain = z.infer<typeof gapDomainSchema>;
 export type GapQuestion = z.infer<typeof gapQuestionSchema>;

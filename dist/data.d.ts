@@ -1,7 +1,4 @@
-import { gapAssessmentDataSchema, type GapAssessmentData } from "./schema";
-import { domains } from "./domains";
-import { allQuestions } from "./questions";
-
+import { type GapAssessmentData } from "./schema";
 /**
  * Source of truth lives in `src/domains.ts` and `src/questions/day-<n>.ts`
  * (TypeScript with full type safety on enums, IDs, and citations). The
@@ -11,12 +8,7 @@ import { allQuestions } from "./questions";
  * Bump these constants when shipping a release; CI will fail if the
  * generated JSON falls out of sync.
  */
-export const VERSION = "2.0.1";
-export const LAST_UPDATED = "2026-04-28";
-
-export const gapAssessment: GapAssessmentData = gapAssessmentDataSchema.parse({
-  version: VERSION,
-  lastUpdated: LAST_UPDATED,
-  domains,
-  questions: allQuestions,
-});
+export declare const VERSION = "2.0.1";
+export declare const LAST_UPDATED = "2026-04-28";
+export declare const gapAssessment: GapAssessmentData;
+//# sourceMappingURL=data.d.ts.map
