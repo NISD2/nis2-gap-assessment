@@ -1,4 +1,9 @@
-export * from "./schema";
-export * from "./scoring";
+// Explicit re-exports — `export *` was dropping type-only re-exports
+// through some downstream typecheckers (Turbopack on Vercel with
+// isolatedModules) and consumers ended up with `unknown` for properties
+// like `question.criticality`. Listing the symbols explicitly avoids
+// the ambiguity.
+export { CRITICALITY, RESPONDENT, CONSEQUENCE, TIME_TO_FIX, ANSWER, MATURITY_LEVELS, gapDomainSchema, gapQuestionSchema, gapAssessmentDataSchema, answerMapSchema, } from "./schema";
+export { computeDomainScores, computeGaps, computeScores } from "./scoring";
 export { gapAssessment } from "./data";
 //# sourceMappingURL=index.js.map

@@ -35,7 +35,7 @@ The reference implementation is at [nisd2.eu/nis2-gap-assessment-schema](https:/
 This package is **not on the npm registry** — install directly from GitHub.
 
 ```bash
-bun add github:NISD2/nis2-gap-assessment-schema#v2.0.1
+bun add github:NISD2/nis2-gap-assessment-schema#v2.0.2
 # npm, pnpm, yarn — same syntax
 ```
 
